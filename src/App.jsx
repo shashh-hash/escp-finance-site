@@ -34,7 +34,11 @@ function App() {
         <Router>
             <div className={`min-h-screen flex flex-col ${matrixMode ? 'matrix-mode' : ''} `}>
                 <StockTicker />
-                <Navbar onMoneyRain={() => setMoneyRain(true)} />
+                <Navbar
+                    onMoneyRain={() => setMoneyRain(true)}
+                    onToggleMatrix={() => setMatrixMode(prev => !prev)}
+                    matrixMode={matrixMode}
+                />
                 <main className="flex-grow pt-16">
                     <Routes>
                         <Route path="/" element={<Home />} />

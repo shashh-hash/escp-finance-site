@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const Navbar = ({ onMoneyRain }) => {
+const Navbar = ({ onMoneyRain, onToggleMatrix, matrixMode }) => {
     const [scrolled, setScrolled] = useState(false);
     const [logoClicks, setLogoClicks] = useState(0);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -118,6 +118,15 @@ const Navbar = ({ onMoneyRain }) => {
                             >
                                 Join Now
                             </Link>
+                            <button
+                                onClick={onToggleMatrix}
+                                className={`block w-full text-center px-5 py-3 font-bold text-sm transition-colors font-dot uppercase tracking-widest border-2 ${matrixMode
+                                        ? 'bg-green-500 text-black border-green-500'
+                                        : 'bg-transparent text-white border-white/20 hover:border-nothing-red'
+                                    }`}
+                            >
+                                {matrixMode ? '✓ Matrix Mode' : 'Matrix Mode'}
+                            </button>
                         </div>
                     </motion.div>
                 )}
