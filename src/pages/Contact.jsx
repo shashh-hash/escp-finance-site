@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Mail, MapPin, Phone, Send } from 'lucide-react';
+import { Mail, MapPin, Phone, Send, Linkedin, Instagram, Twitter } from 'lucide-react';
 
 const Contact = () => {
     return (
-        <div className="pt-24 px-6 min-h-screen bg-premium-black">
+        <div className="pt-24 px-6 min-h-screen bg-nothing-black bg-grid">
             <div className="max-w-7xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}

@@ -29,6 +29,20 @@ const Partners = () => {
                     </p>
                 </motion.div>
 
+                {/* Hero Image Section */}
+                <div className="mb-16 relative overflow-hidden border border-white/10 aspect-[21/9]">
+                    <div className="absolute inset-0 bg-nothing-red/20 opacity-0 hover:opacity-100 transition-opacity z-10 mix-blend-overlay" />
+                    <img
+                        src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=1600"
+                        alt="Partnership"
+                        className="w-full h-full object-cover grayscale contrast-125"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-nothing-black via-transparent to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-8 text-center">
+                        <p className="text-2xl font-bold font-dot uppercase text-white">Building the Future Together</p>
+                    </div>
+                </div>
+
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-24">
                     {partners.map((partner, i) => (
                         <div key={i} className="aspect-video bg-nothing-white p-8 border border-white/10 hover:border-nothing-red transition-colors group flex items-center justify-center relative overflow-hidden">
