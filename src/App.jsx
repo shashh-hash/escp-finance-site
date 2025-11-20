@@ -15,16 +15,34 @@ import FinancialTimes from './pages/FinancialTimes';
 import EasterEgg from './components/EasterEgg';
 import StockTicker from './components/StockTicker';
 import MoneyRain from './components/MoneyRain';
+import StockCrash from './components/StockCrash';
+import StonksMode from './components/StonksMode';
 
 function App() {
     const [matrixMode, setMatrixMode] = useState(false);
     const [moneyRain, setMoneyRain] = useState(false);
+    const [stockCrash, setStockCrash] = useState(false);
+    const [stonksMode, setStonksMode] = useState(false);
+    const [typedText, setTypedText] = useState('');
 
     useEffect(() => {
         const handleKeyDown = (e) => {
-            if (e.key.toLowerCase() === 'm' && !e.target.matches('input, textarea')) {
+            if (e.target.matches('input, textarea')) return;
+
+            // Matrix mode
+            if (e.key.toLowerCase() === 'm') {
                 setMatrixMode(prev => !prev);
             }
+
+            // Stonks mode - type 'stonks'
+            setTypedText(prev => {
+                const newText = (prev + e.key).slice(-6).toLowerCase();
+                if (newText === 'stonks') {
+                    setStonksMode(prev => !prev);
+                    return '';
+                }
+                return newText;
+            });
         };
         window.addEventListener('keydown', handleKeyDown);
         return () => window.removeEventListener('keydown', handleKeyDown);
@@ -32,11 +50,12 @@ function App() {
 
     return (
         <Router basename="/escp-finance-site">
-            <div className={`min-h-screen flex flex-col ${matrixMode ? 'matrix-mode' : ''} `}>
+            <div className={`min-h-screen flex flex-col ${matrixMode ? 'matrix-mode' : ''} ${stonksMode ? 'stonks-mode' : ''}`}>
                 <StockTicker />
                 <Navbar
                     onMoneyRain={() => setMoneyRain(true)}
                     onToggleMatrix={() => setMatrixMode(prev => !prev)}
+                    onStockCrash={() => setStockCrash(true)}
                     matrixMode={matrixMode}
                 />
                 <main className="flex-grow pt-16">
@@ -56,6 +75,8 @@ function App() {
                 <Footer />
                 <EasterEgg />
                 <MoneyRain active={moneyRain} onComplete={() => setMoneyRain(false)} />
+                <StockCrash active={stockCrash} onComplete={() => setStockCrash(false)} />
+                <StonksMode active={stonksMode} />
             </div>
         </Router>
     );
