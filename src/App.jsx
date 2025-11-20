@@ -31,7 +31,7 @@ function App() {
     }, []);
 
     return (
-        <Router>
+        <Router basename="/escp-finance-site">
             <div className={`min-h-screen flex flex-col ${matrixMode ? 'matrix-mode' : ''} `}>
                 <StockTicker />
                 <Navbar
