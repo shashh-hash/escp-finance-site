@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const Navbar = ({ onMoneyRain }) => {
     const [scrolled, setScrolled] = useState(false);
     const [logoClicks, setLogoClicks] = useState(0);
+    const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
     const location = useLocation();
 
     useEffect(() => {
@@ -14,6 +15,11 @@ const Navbar = ({ onMoneyRain }) => {
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+    // Close mobile menu when route changes
+    useEffect(() => {
+        setMobileMenuOpen(false);
+    }, [location]);
 
     const handleLogoClick = (e) => {
         if (location.pathname === '/') {
@@ -71,12 +77,51 @@ const Navbar = ({ onMoneyRain }) => {
                 </div>
 
                 {/* Mobile Menu Button */}
-                <button className="md:hidden text-white">
+                <button
+                    className="md:hidden text-white z-50"
+                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                    aria-label="Toggle menu"
+                >
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                        {mobileMenuOpen ? (
+                            <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        ) : (
+                            <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                        )}
                     </svg>
                 </button>
             </div>
+
+            {/* Mobile Menu */}
+            <AnimatePresence>
+                {mobileMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, height: 0 }}
+                        animate={{ opacity: 1, height: 'auto' }}
+                        exit={{ opacity: 0, height: 0 }}
+                        transition={{ duration: 0.3 }}
+                        className="md:hidden bg-nothing-black border-t border-white/10 overflow-hidden"
+                    >
+                        <div className="px-6 py-4 space-y-4">
+                            {links.map((link) => (
+                                <Link
+                                    key={link.name}
+                                    to={link.path}
+                                    className="block text-sm font-medium text-gray-300 hover:text-nothing-red transition-colors font-dot uppercase tracking-widest py-2"
+                                >
+                                    {link.name}
+                                </Link>
+                            ))}
+                            <Link
+                                to="/join"
+                                className="block w-full text-center px-5 py-3 bg-nothing-white text-nothing-black font-bold text-sm hover:bg-nothing-red hover:text-white transition-colors font-dot uppercase tracking-widest"
+                            >
+                                Join Now
+                            </Link>
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
         </nav>
     );
 };
