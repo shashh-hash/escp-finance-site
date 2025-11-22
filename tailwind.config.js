@@ -7,8 +7,8 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                'sans': ['Inter', 'system-ui', 'sans-serif'],
-                'heading': ['Montserrat', 'Inter', 'sans-serif'],
+                'sans': ['Poppins', 'Inter', 'system-ui', 'sans-serif'],
+                'heading': ['Poppins', 'Montserrat', 'Inter', 'sans-serif'],
             },
             colors: {
                 'esf': {
@@ -57,6 +57,13 @@ export default {
                 'tighter': '-0.02em',
                 'tight': '-0.01em',
                 'wide': '0.1em',
+            },
+            borderRadius: {
+                'lg': '0.375rem',  // 6px
+                'xl': '0.5rem',    // 8px
+                '2xl': '0.75rem',  // 12px
+                '3xl': '1rem',     // 16px (was 24px)
+                '4xl': '1.5rem',   // 24px
             },
         },
     },

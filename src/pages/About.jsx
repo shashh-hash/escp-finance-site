@@ -190,7 +190,7 @@ const About = () => {
                                         transition={{ delay: index * 0.1 }}
                                         className="group w-full max-w-xs"
                                     >
-                                        <div className="aspect-square overflow-hidden rounded-xl mb-6 bg-esf-midnight border border-white/10 relative">
+                                        <div className="aspect-square overflow-hidden mb-6 bg-esf-midnight border border-white/10 relative">
                                             <div className="absolute inset-0 bg-esf-accent/20 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
                                             <img
                                                 src={member.image}
@@ -218,7 +218,7 @@ const About = () => {
                                         transition={{ delay: 0.3 + index * 0.1 }}
                                         className="group w-full"
                                     >
-                                        <div className="aspect-square overflow-hidden rounded-xl mb-6 bg-esf-midnight border border-white/10 relative">
+                                        <div className="aspect-square overflow-hidden mb-6 bg-esf-midnight border border-white/10 relative">
                                             <div className="absolute inset-0 bg-esf-accent/20 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
                                             <img
                                                 src={member.image}
@@ -247,7 +247,7 @@ const About = () => {
                                     transition={{ delay: index * 0.1 }}
                                     className="group"
                                 >
-                                    <div className="aspect-square overflow-hidden rounded-xl mb-6 bg-esf-midnight border border-white/10 relative">
+                                    <div className="aspect-square overflow-hidden mb-6 bg-esf-midnight border border-white/10 relative">
                                         <div className="absolute inset-0 bg-esf-accent/20 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
                                         <img
                                             src={member.image}
