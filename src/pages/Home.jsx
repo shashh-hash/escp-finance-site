@@ -36,7 +36,7 @@ const Home = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-esf-midnight text-white font-sans selection:bg-esf-accent selection:text-esf-midnight">
+        <div className="min-h-screen bg-white text-esf-midnight font-sans selection:bg-esf-accent selection:text-esf-midnight">
 
             {/* Hero Section - Premium & Professional */}
             <section className="relative min-h-screen flex flex-col justify-center p-4 md:p-8 pt-32 overflow-hidden">
@@ -53,9 +53,9 @@ const Home = () => {
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8 }}
                         >
-                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-sm">
+                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-esf-midnight/10 mb-8 backdrop-blur-sm">
                                 <span className="w-2 h-2 rounded-full bg-esf-accent animate-pulse"></span>
-                                <span className="text-sm font-medium text-esf-silver tracking-wide uppercase">Est. 2025 • Turin Campus</span>
+                                <span className="text-sm font-medium text-esf-blue tracking-wide uppercase">Est. 2025 • Turin Campus</span>
                             </div>
 
                             <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold leading-[1.1] tracking-tight mb-8">
@@ -63,7 +63,7 @@ const Home = () => {
                                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-esf-silver">Finance</span>
                             </h1>
 
-                            <p className="text-lg md:text-xl text-esf-silver max-w-xl leading-relaxed mb-10">
+                            <p className="text-lg md:text-xl text-esf-blue max-w-xl leading-relaxed mb-10">
                                 Bridging the gap between academic theory and professional practice. We are building the next generation of finance leaders.
                             </p>
 
@@ -72,7 +72,7 @@ const Home = () => {
                                     Join the Society
                                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                 </Link>
-                                <Link to="/about" className="px-8 py-4 border border-white/10 text-white font-medium rounded-lg hover:bg-white/5 transition-colors duration-300 backdrop-blur-sm">
+                                <Link to="/about" className="px-8 py-4 border border-esf-midnight/10 text-esf-midnight font-medium rounded-lg hover:bg-esf-midnight/5 transition-colors duration-300 backdrop-blur-sm">
                                     Learn More
                                 </Link>
                             </div>
@@ -82,25 +82,25 @@ const Home = () => {
                     {/* Side Grid - Professional Stats */}
                     <div className="lg:col-span-4 flex flex-col gap-6 mt-12 lg:mt-0">
                         {/* Stat Card */}
-                        <div className="flex-1 bg-esf-navy/50 backdrop-blur-md rounded-lg p-8 border border-white/5 flex flex-col justify-center group hover:border-esf-accent/30 transition-colors">
+                        <div className="flex-1 bg-slate-50/80 backdrop-blur-md rounded-lg p-8 border border-esf-midnight/10 flex flex-col justify-center group hover:border-esf-accent/30 transition-colors">
                             <div className="flex justify-between items-start mb-4">
                                 <div className="p-3 rounded-xl bg-esf-blue/30 text-esf-accent">
                                     <Users className="w-6 h-6" />
                                 </div>
-                                <ArrowUpRight className="w-5 h-5 text-esf-silver group-hover:text-white transition-colors" />
+                                <ArrowUpRight className="w-5 h-5 text-esf-blue group-hover:text-esf-midnight transition-colors" />
                             </div>
-                            <div className="text-5xl font-heading font-bold text-white mb-2">2025</div>
-                            <div className="text-esf-silver font-medium">Founding Year</div>
+                            <div className="text-5xl font-heading font-bold text-esf-midnight mb-2">2025</div>
+                            <div className="text-esf-blue font-medium">Founding Year</div>
                         </div>
 
                         {/* Article Card */}
-                        <div className="flex-1 bg-gradient-to-br from-esf-blue to-esf-navy rounded-lg p-8 border border-white/5 flex flex-col justify-center relative overflow-hidden group">
+                        <div className="flex-1 bg-gradient-to-br from-esf-blue to-esf-navy rounded-lg p-8 border border-esf-midnight/10 flex flex-col justify-center relative overflow-hidden group">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-esf-accent/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"></div>
 
                             <div className="relative z-10">
                                 <div className="text-esf-accent text-sm font-bold uppercase tracking-wider mb-2">Featured Article</div>
                                 <h3 className="text-2xl font-heading font-bold mb-2">The Future of Fintech</h3>
-                                <p className="text-esf-silver text-sm mb-6">Explore how technology is reshaping financial services.</p>
+                                <p className="text-esf-blue text-sm mb-6">Explore how technology is reshaping financial services.</p>
 
                                 <Link to="/articles" className="inline-flex items-center gap-2 text-sm font-bold hover:text-esf-accent transition-colors">
                                     Read Article <ArrowRight className="w-4 h-4" />
@@ -133,25 +133,25 @@ const Home = () => {
             <section className="py-32 px-4 md:px-8 max-w-[1400px] mx-auto">
                 <div className="mb-16">
                     <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6">Our Focus Areas</h2>
-                    <p className="text-xl text-esf-silver max-w-2xl">Comprehensive coverage of the financial landscape through specialized tracks and resources.</p>
+                    <p className="text-xl text-esf-blue max-w-2xl">Comprehensive coverage of the financial landscape through specialized tracks and resources.</p>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {features.map((feature, index) => (
-                        <div key={index} className="bg-esf-navy/40 backdrop-blur-sm rounded-lg p-10 border border-white/5 hover:border-esf-accent/30 hover:bg-esf-navy/60 transition-all duration-300 group h-[400px] flex flex-col justify-between">
+                        <div key={index} className="bg-slate-100/80 backdrop-blur-sm rounded-lg p-10 border border-esf-midnight/10 hover:border-esf-accent/30 hover:bg-slate-200/80 transition-all duration-300 group h-[400px] flex flex-col justify-between">
 
                             <div>
                                 <div className="w-14 h-14 bg-esf-blue/30 rounded-lg flex items-center justify-center mb-8 text-esf-accent group-hover:scale-110 transition-transform duration-300">
                                     {feature.icon}
                                 </div>
                                 <h3 className="text-2xl font-heading font-bold mb-4">{feature.title}</h3>
-                                <p className="text-esf-silver leading-relaxed">
+                                <p className="text-esf-blue leading-relaxed">
                                     {feature.description}
                                 </p>
                             </div>
 
                             <div>
-                                <Link to={feature.link} className="inline-flex items-center gap-2 text-sm font-bold text-white group-hover:text-esf-accent transition-colors">
+                                <Link to={feature.link} className="inline-flex items-center gap-2 text-sm font-bold text-esf-midnight group-hover:text-esf-accent transition-colors">
                                     Explore Track <ArrowRight className="w-4 h-4" />
                                 </Link>
                             </div>
@@ -167,7 +167,7 @@ const Home = () => {
                     <h2 className="text-4xl md:text-6xl font-heading font-bold mb-8">
                         Ready to Launch Your Career?
                     </h2>
-                    <p className="text-xl text-esf-silver mb-12 max-w-2xl mx-auto">
+                    <p className="text-xl text-esf-blue mb-12 max-w-2xl mx-auto">
                         Join a community of ambitious students and gain access to exclusive events, workshops, and networking opportunities.
                     </p>
                     <Link to="/join" className="inline-block px-12 py-5 bg-white text-esf-midnight font-heading font-bold text-lg rounded-lg hover:bg-esf-accent transition-all duration-300 shadow-xl shadow-white/10">

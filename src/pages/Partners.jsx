@@ -24,13 +24,13 @@ const Partners = () => {
                 >
                     <span className="text-nothing-red font-dot uppercase tracking-widest mb-2 block">Network</span>
                     <h1 className="text-5xl font-bold mb-6 font-dot uppercase">Our Partners</h1>
-                    <p className="text-xl text-gray-400 max-w-2xl mx-auto font-mono">
+                    <p className="text-xl text-esf-blue max-w-2xl mx-auto font-mono">
                         Collaborating with industry leaders to provide unparalleled opportunities.
                     </p>
                 </motion.div>
 
                 {/* Hero Image Section */}
-                <div className="mb-16 relative overflow-hidden border border-white/10 aspect-[21/9]">
+                <div className="mb-16 relative overflow-hidden border border-esf-midnight/10 aspect-[21/9]">
                     <div className="absolute inset-0 bg-nothing-red/20 opacity-0 hover:opacity-100 transition-opacity z-10 mix-blend-overlay" />
                     <img
                         src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&q=80&w=1600"
@@ -39,13 +39,13 @@ const Partners = () => {
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-nothing-black via-transparent to-transparent" />
                     <div className="absolute bottom-0 left-0 right-0 p-8 text-center">
-                        <p className="text-2xl font-bold font-dot uppercase text-white">Building the Future Together</p>
+                        <p className="text-2xl font-bold font-dot uppercase text-esf-midnight">Building the Future Together</p>
                     </div>
                 </div>
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-24">
                     {partners.map((partner, i) => (
-                        <div key={i} className="aspect-video bg-nothing-white p-8 border border-white/10 hover:border-nothing-red transition-colors group flex items-center justify-center relative overflow-hidden">
+                        <div key={i} className="aspect-video bg-nothing-white p-8 border border-esf-midnight/10 hover:border-nothing-red transition-colors group flex items-center justify-center relative overflow-hidden">
                             <img
                                 src={partner.logo}
                                 alt={partner.name}
@@ -56,11 +56,11 @@ const Partners = () => {
                 </div>
 
                 {/* CTA */}
-                <div className="bg-nothing-dark-grey border border-white/10 p-12 text-center relative overflow-hidden">
+                <div className="bg-nothing-dark-grey border border-esf-midnight/10 p-12 text-center relative overflow-hidden">
                     <div className="absolute inset-0 bg-grid opacity-10" />
                     <div className="relative z-10">
                         <h2 className="text-3xl font-bold mb-4 font-dot uppercase">Become a Partner</h2>
-                        <p className="text-gray-400 mb-8 max-w-xl mx-auto font-mono">
+                        <p className="text-esf-blue mb-8 max-w-xl mx-auto font-mono">
                             Interested in recruiting top talent from ESCP? Partner with us to host events, workshops, and gain access to our resume book.
                         </p>
                         <a href="mailto:partnerships@escpfinance.com" className="btn-nothing inline-block">

@@ -33,11 +33,11 @@ const FinancialTimes = () => {
                         <p className="text-lg leading-relaxed">
                             "The market is not driven by greed or fear, but by the relentless pursuit of the perfect croissant."
                         </p>
-                        <p className="mt-4 text-right text-sm text-gray-500">- Anonymous Trader</p>
+                        <p className="mt-4 text-right text-sm text-slate-600">- Anonymous Trader</p>
                     </div>
                     <button
                         onClick={() => window.location.href = '/'}
-                        className="mt-12 px-8 py-3 bg-black text-white font-sans uppercase tracking-widest hover:bg-gray-800 transition-colors"
+                        className="mt-12 px-8 py-3 bg-black text-esf-midnight font-sans uppercase tracking-widest hover:bg-gray-800 transition-colors"
                     >
                         Return to Reality
                     </button>
@@ -50,7 +50,7 @@ const FinancialTimes = () => {
         <div className="min-h-screen bg-[#fcd5d1] text-[#333] font-serif flex flex-col">
             <header className="py-6 border-b border-black/10 text-center bg-white/50 backdrop-blur-sm">
                 <h1 className="text-4xl font-bold tracking-tight">FINANCIAL TIMES</h1>
-                <p className="text-xs uppercase tracking-widest mt-2 font-sans text-gray-500">Partner Access Portal</p>
+                <p className="text-xs uppercase tracking-widest mt-2 font-sans text-slate-600">Partner Access Portal</p>
             </header>
 
             <main className="flex-grow flex items-center justify-center p-6">
@@ -91,14 +91,14 @@ const FinancialTimes = () => {
                         <button
                             type="submit"
                             disabled={status === 'loading'}
-                            className="w-full py-4 bg-black text-white font-bold uppercase tracking-widest hover:bg-gray-800 transition-colors font-sans disabled:opacity-50"
+                            className="w-full py-4 bg-black text-esf-midnight font-bold uppercase tracking-widest hover:bg-gray-800 transition-colors font-sans disabled:opacity-50"
                         >
                             {status === 'loading' ? 'Authenticating...' : 'Unlock Access'}
                         </button>
                     </form>
 
                     <div className="mt-8 text-center">
-                        <p className="text-xs text-gray-400 font-sans">
+                        <p className="text-xs text-esf-blue font-sans">
                             Protected by quantum encryption. Unauthorized access is futile.
                         </p>
                     </div>

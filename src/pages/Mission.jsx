@@ -36,7 +36,7 @@ const Mission = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-esf-midnight text-white">
+        <div className="min-h-screen bg-white text-esf-midnight">
             {/* Hero Section */}
             <section className="pt-32 pb-20 px-6 relative overflow-hidden">
                 <div className="absolute inset-0 bg-grid opacity-10"></div>
@@ -52,7 +52,7 @@ const Mission = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="text-xl text-gray-400 leading-relaxed max-w-2xl mx-auto"
+                        className="text-xl text-esf-blue leading-relaxed max-w-2xl mx-auto"
                     >
                         Empowering the next generation of finance professionals through education, networking, and excellence.
                     </motion.p>
@@ -75,10 +75,10 @@ const Mission = () => {
                                 <div className="text-esf-accent mb-6 p-3 bg-esf-accent/10 rounded-lg inline-block group-hover:bg-esf-accent/20 transition-colors">
                                     {value.icon}
                                 </div>
-                                <h3 className="text-2xl font-heading font-bold text-white mb-4">
+                                <h3 className="text-2xl font-heading font-bold text-esf-midnight mb-4">
                                     {value.title}
                                 </h3>
-                                <p className="text-gray-400 leading-relaxed">
+                                <p className="text-esf-blue leading-relaxed">
                                     {value.description}
                                 </p>
                             </motion.div>
@@ -88,7 +88,7 @@ const Mission = () => {
             </section>
 
             {/* Goals Section */}
-            <section className="py-20 px-6 bg-esf-dark-navy relative">
+            <section className="py-20 px-6 bg-slate-50 relative">
                 <div className="absolute inset-0 bg-grid opacity-5"></div>
                 <div className="max-w-4xl mx-auto relative z-10">
                     <h2 className="text-4xl font-heading font-bold mb-12 text-center">
@@ -102,7 +102,7 @@ const Mission = () => {
                                 whileInView={{ opacity: 1, x: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="flex items-start gap-6 p-6 rounded-xl hover:bg-white/5 transition-colors border border-transparent hover:border-white/5"
+                                className="flex items-start gap-6 p-6 rounded-xl hover:bg-esf-midnight/5 transition-colors border border-transparent hover:border-esf-midnight/10"
                             >
                                 <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-esf-accent/10 text-esf-accent flex items-center justify-center font-bold border border-esf-accent/20">
                                     {index + 1}
@@ -120,7 +120,7 @@ const Mission = () => {
                     <h2 className="text-4xl font-heading font-bold mb-6">
                         Join Our Mission
                     </h2>
-                    <p className="text-xl text-gray-400 mb-10">
+                    <p className="text-xl text-esf-blue mb-10">
                         Be part of a community that's shaping the future of finance.
                     </p>
                     <Link

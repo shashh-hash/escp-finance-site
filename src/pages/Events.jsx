@@ -48,7 +48,7 @@ const Events = () => {
                 >
                     <span className="text-nothing-red font-dot uppercase tracking-widest mb-2 block">Calendar</span>
                     <h1 className="text-5xl font-bold mb-6 font-dot uppercase">Upcoming Events</h1>
-                    <p className="text-xl text-gray-400 max-w-2xl mx-auto font-mono">
+                    <p className="text-xl text-esf-blue max-w-2xl mx-auto font-mono">
                         Join us for workshops, guest speakers, and networking sessions.
                     </p>
                 </motion.div>

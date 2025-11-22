@@ -68,7 +68,7 @@ const News = () => {
     );
 
     return (
-        <div className="min-h-screen bg-esf-midnight text-white">
+        <div className="min-h-screen bg-white text-esf-midnight">
             {/* Hero Section */}
             <section className="pt-32 pb-12 px-6 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-b from-esf-navy/50 to-esf-midnight"></div>
@@ -85,7 +85,7 @@ const News = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="text-xl text-gray-400 max-w-3xl mb-8"
+                        className="text-xl text-esf-blue max-w-3xl mb-8"
                     >
                         Curated insights from the global financial markets and society updates.
                     </motion.p>
@@ -102,9 +102,9 @@ const News = () => {
                             placeholder="Search news..."
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
-                            className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-esf-accent/50 focus:bg-white/10 transition-all backdrop-blur-sm"
+                            className="w-full px-6 py-4 bg-white/5 border border-esf-midnight/10 rounded-lg text-esf-midnight placeholder-slate-400 focus:outline-none focus:border-esf-accent/50 focus:bg-white/10 transition-all backdrop-blur-sm"
                         />
-                        <div className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500">
+                        <div className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-600">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
                             </svg>
@@ -136,23 +136,23 @@ const News = () => {
                                         className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                                     />
                                     <div className="absolute top-4 left-4 z-20">
-                                        <span className="px-3 py-1 bg-esf-midnight/80 backdrop-blur-sm text-white text-xs font-bold uppercase tracking-wider rounded-sm border border-white/10">
+                                        <span className="px-3 py-1 bg-white/80 backdrop-blur-sm text-esf-midnight text-xs font-bold uppercase tracking-wider rounded-sm border border-esf-midnight/10">
                                             {item.category}
                                         </span>
                                     </div>
                                 </div>
                                 <div className="p-8 flex flex-col flex-grow">
-                                    <div className="flex items-center gap-2 text-xs text-gray-500 uppercase tracking-wider font-medium mb-4">
+                                    <div className="flex items-center gap-2 text-xs text-slate-600 uppercase tracking-wider font-medium mb-4">
                                         <Calendar size={14} />
                                         <span>{item.date}</span>
                                     </div>
-                                    <h3 className="text-xl font-heading font-bold text-white mb-4 group-hover:text-esf-accent transition-colors">
+                                    <h3 className="text-xl font-heading font-bold text-esf-midnight mb-4 group-hover:text-esf-accent transition-colors">
                                         {item.title}
                                     </h3>
-                                    <p className="text-gray-400 mb-6 line-clamp-3 leading-relaxed flex-grow">
+                                    <p className="text-esf-blue mb-6 line-clamp-3 leading-relaxed flex-grow">
                                         {item.excerpt}
                                     </p>
-                                    <button className="flex items-center gap-2 text-esf-accent font-bold text-sm hover:text-white transition-colors uppercase tracking-wider mt-auto">
+                                    <button className="flex items-center gap-2 text-esf-accent font-bold text-sm hover:text-esf-midnight transition-colors uppercase tracking-wider mt-auto">
                                         Read More
                                         <ArrowRight size={16} />
                                     </button>
@@ -161,7 +161,7 @@ const News = () => {
                         ))}
                     </div>
                     {filteredNews.length === 0 && (
-                        <div className="text-center py-20 text-gray-500">
+                        <div className="text-center py-20 text-slate-600">
                             No news found matching your search.
                         </div>
                     )}

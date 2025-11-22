@@ -16,7 +16,7 @@ const articles = [
 
 const Articles = () => {
     return (
-        <div className="min-h-screen bg-esf-midnight text-white">
+        <div className="min-h-screen bg-white text-esf-midnight">
             {/* Hero Section */}
             <section className="pt-32 pb-20 px-6 relative overflow-hidden">
                 <div className="absolute inset-0 bg-grid opacity-10"></div>
@@ -29,7 +29,7 @@ const Articles = () => {
                         <h1 className="text-5xl md:text-7xl font-heading font-bold mb-6">
                             Articles & <span className="text-gradient-gold">Insights</span>
                         </h1>
-                        <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                        <p className="text-xl text-esf-blue max-w-3xl mx-auto">
                             Deep dives into finance, markets, and the mechanisms that move the world.
                         </p>
                     </motion.div>
@@ -49,7 +49,7 @@ const Articles = () => {
                                 className="group cursor-pointer glass glass-hover rounded-xl overflow-hidden"
                             >
                                 <Link to={`/articles/${article.id}`}>
-                                    <div className="aspect-[4/3] overflow-hidden bg-esf-dark-navy relative">
+                                    <div className="aspect-[4/3] overflow-hidden bg-slate-50 relative">
                                         <div className="absolute inset-0 bg-esf-accent/20 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
                                         <img
                                             src={article.image}
@@ -63,13 +63,13 @@ const Articles = () => {
                                                 {article.category}
                                             </span>
                                         </div>
-                                        <h3 className="text-xl font-heading font-bold text-white mb-3 group-hover:text-esf-accent transition-colors">
+                                        <h3 className="text-xl font-heading font-bold text-esf-midnight mb-3 group-hover:text-esf-accent transition-colors">
                                             {article.title}
                                         </h3>
-                                        <p className="text-gray-400 text-sm mb-4 line-clamp-2">
+                                        <p className="text-esf-blue text-sm mb-4 line-clamp-2">
                                             {article.excerpt}
                                         </p>
-                                        <div className="flex items-center gap-2 text-xs text-gray-500 uppercase tracking-wider font-medium">
+                                        <div className="flex items-center gap-2 text-xs text-slate-600 uppercase tracking-wider font-medium">
                                             <Calendar size={12} />
                                             <span>{article.date}</span>
                                         </div>

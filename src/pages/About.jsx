@@ -81,7 +81,7 @@ const About = () => {
     ];
 
     return (
-        <div className="min-h-screen bg-esf-midnight text-white">
+        <div className="min-h-screen bg-white text-esf-midnight">
             {/* Hero Section */}
             <section className="pt-32 pb-20 px-6 relative overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-b from-esf-navy/50 to-esf-midnight"></div>
@@ -98,7 +98,7 @@ const About = () => {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ delay: 0.1 }}
-                        className="text-xl text-gray-400 leading-relaxed max-w-3xl mx-auto"
+                        className="text-xl text-esf-blue leading-relaxed max-w-3xl mx-auto"
                     >
                         ESCP Students for Finance is the premier finance society at ESCP Business School,
                         dedicated to connecting students with the world of finance through education, networking, and practical experience.
@@ -107,7 +107,7 @@ const About = () => {
             </section>
 
             {/* Stats Section */}
-            <section className="py-16 px-6 border-y border-white/5 bg-esf-dark-navy/30">
+            <section className="py-16 px-6 border-y border-esf-midnight/10 bg-slate-50/30">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid md:grid-cols-4 gap-8">
                         {stats.map((stat, index) => (
@@ -120,8 +120,8 @@ const About = () => {
                                 className="text-center group"
                             >
                                 <div className="text-esf-accent mb-4 flex justify-center opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300">{stat.icon}</div>
-                                <div className="text-4xl font-heading font-bold text-white mb-2">{stat.value}</div>
-                                <div className="text-gray-500 uppercase tracking-wider text-sm">{stat.label}</div>
+                                <div className="text-4xl font-heading font-bold text-esf-midnight mb-2">{stat.value}</div>
+                                <div className="text-slate-600 uppercase tracking-wider text-sm">{stat.label}</div>
                             </motion.div>
                         ))}
                     </div>
@@ -134,7 +134,7 @@ const About = () => {
                     <h2 className="text-4xl font-heading font-bold mb-12 text-center">
                         Who We Are
                     </h2>
-                    <div className="space-y-8 text-lg text-gray-400 leading-relaxed glass p-8 md:p-12 rounded-lg">
+                    <div className="space-y-8 text-lg text-esf-blue leading-relaxed glass p-8 md:p-12 rounded-lg">
                         <p>
                             Founded in 2025, ESCP Students for Finance is the newest finance society at ESCP Business School's
                             Turin campus. We are building a community of students passionate about finance, starting from the ground up.
@@ -154,7 +154,7 @@ const About = () => {
             </section>
 
             {/* Team Section */}
-            <section className="py-24 px-6 bg-esf-dark-navy relative">
+            <section className="py-24 px-6 bg-slate-50 relative">
                 <div className="absolute inset-0 bg-grid opacity-5"></div>
                 <div className="max-w-7xl mx-auto relative z-10">
                     <h2 className="text-4xl font-heading font-bold mb-12 text-center">
@@ -169,7 +169,7 @@ const About = () => {
                                 onClick={() => setActiveTab(tab)}
                                 className={`px-6 py-3 rounded-lg text-sm font-bold uppercase tracking-wider transition-all duration-300 ${activeTab === tab
                                     ? 'bg-esf-accent text-esf-midnight shadow-lg shadow-esf-accent/20 scale-105'
-                                    : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white'
+                                    : 'bg-white/5 text-esf-blue hover:bg-white/10 hover:text-esf-midnight'
                                     }`}
                             >
                                 {tab}
@@ -190,7 +190,7 @@ const About = () => {
                                         transition={{ delay: index * 0.1 }}
                                         className="group w-full max-w-xs"
                                     >
-                                        <div className="aspect-square overflow-hidden mb-6 bg-esf-midnight border border-white/10 relative">
+                                        <div className="aspect-square overflow-hidden mb-6 bg-white border border-esf-midnight/10 relative">
                                             <div className="absolute inset-0 bg-esf-accent/20 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
                                             <img
                                                 src={member.image}
@@ -199,10 +199,10 @@ const About = () => {
                                             />
                                         </div>
                                         <div className="text-center">
-                                            <h3 className="text-xl font-heading font-bold text-white mb-1 group-hover:text-esf-accent transition-colors">
+                                            <h3 className="text-xl font-heading font-bold text-esf-midnight mb-1 group-hover:text-esf-accent transition-colors">
                                                 {member.name}
                                             </h3>
-                                            <p className="text-gray-500">{member.role}</p>
+                                            <p className="text-slate-600">{member.role}</p>
                                         </div>
                                     </motion.div>
                                 ))}
@@ -218,7 +218,7 @@ const About = () => {
                                         transition={{ delay: 0.3 + index * 0.1 }}
                                         className="group w-full"
                                     >
-                                        <div className="aspect-square overflow-hidden mb-6 bg-esf-midnight border border-white/10 relative">
+                                        <div className="aspect-square overflow-hidden mb-6 bg-white border border-esf-midnight/10 relative">
                                             <div className="absolute inset-0 bg-esf-accent/20 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
                                             <img
                                                 src={member.image}
@@ -227,10 +227,10 @@ const About = () => {
                                             />
                                         </div>
                                         <div className="text-center">
-                                            <h3 className="text-xl font-heading font-bold text-white mb-1 group-hover:text-esf-accent transition-colors">
+                                            <h3 className="text-xl font-heading font-bold text-esf-midnight mb-1 group-hover:text-esf-accent transition-colors">
                                                 {member.name}
                                             </h3>
-                                            <p className="text-gray-500">{member.role}</p>
+                                            <p className="text-slate-600">{member.role}</p>
                                         </div>
                                     </motion.div>
                                 ))}
@@ -247,7 +247,7 @@ const About = () => {
                                     transition={{ delay: index * 0.1 }}
                                     className="group"
                                 >
-                                    <div className="aspect-square overflow-hidden mb-6 bg-esf-midnight border border-white/10 relative">
+                                    <div className="aspect-square overflow-hidden mb-6 bg-white border border-esf-midnight/10 relative">
                                         <div className="absolute inset-0 bg-esf-accent/20 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
                                         <img
                                             src={member.image}
@@ -256,10 +256,10 @@ const About = () => {
                                         />
                                     </div>
                                     <div className="text-center">
-                                        <h3 className="text-xl font-heading font-bold text-white mb-1 group-hover:text-esf-accent transition-colors">
+                                        <h3 className="text-xl font-heading font-bold text-esf-midnight mb-1 group-hover:text-esf-accent transition-colors">
                                             {member.name}
                                         </h3>
-                                        <p className="text-gray-500">{member.role}</p>
+                                        <p className="text-slate-600">{member.role}</p>
                                     </div>
                                 </motion.div>
                             ))}
@@ -274,7 +274,7 @@ const About = () => {
                     <h2 className="text-4xl font-heading font-bold mb-6">
                         Join Our Community
                     </h2>
-                    <p className="text-xl text-gray-400 mb-10">
+                    <p className="text-xl text-esf-blue mb-10">
                         Become part of a network of ambitious finance professionals.
                     </p>
                     <Link
