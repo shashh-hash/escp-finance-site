@@ -7,29 +7,57 @@ export default {
     theme: {
         extend: {
             fontFamily: {
-                sans: ['Inter', 'sans-serif'],
-                dot: ['"DotGothic16"', 'sans-serif'],
+                'sans': ['Inter', 'system-ui', 'sans-serif'],
+                'heading': ['Montserrat', 'Inter', 'sans-serif'],
             },
             colors: {
-                'nothing-black': '#000000',
-                'nothing-white': '#ffffff',
-                'nothing-red': '#D71921',
-                'nothing-grey': '#888888',
-                'nothing-dark-grey': '#1a1a1a',
+                'esf': {
+                    'midnight': '#0B0C15',  // Deepest background (Rich Black/Blue)
+                    'navy': '#1A1B2E',      // Secondary background
+                    'blue': '#303151',      // Primary Brand Blue
+                    'dark-navy': '#131422', // Card background
+                    'light-blue': '#4A4B75', // Hover state
+                    'accent': '#00D9FF',    // Electric Blue (Modern Accent)
+                    'gold': '#D4AF37',      // Classic Gold (Secondary Accent)
+                    'white': '#FFFFFF',
+                    'silver': '#A8B2C1',    // Text secondary
+                    'light': '#E8EBF0',     // Text primary
+                }
             },
             backgroundImage: {
-                'grid-pattern': "linear-gradient(to right, #333 1px, transparent 1px), linear-gradient(to bottom, #333 1px, transparent 1px)",
+                'gradient-dark': 'linear-gradient(135deg, #0B0C15 0%, #1A1B2E 100%)',
+                'gradient-glow': 'radial-gradient(circle at center, rgba(0, 217, 255, 0.15) 0%, transparent 70%)',
+                'subtle-grid': 'linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px), linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px)',
             },
             animation: {
-                'glitch': 'glitch 1s linear infinite',
+                'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                'shimmer': 'shimmer 2s linear infinite',
+                'marquee': 'marquee 40s linear infinite',
             },
             keyframes: {
-                glitch: {
-                    '2%, 64%': { transform: 'translate(2px,0) skew(0deg)' },
-                    '4%, 60%': { transform: 'translate(-2px,0) skew(0deg)' },
-                    '62%': { transform: 'translate(0,0) skew(5deg)' },
-                }
-            }
+                float: {
+                    '0%, 100%': { transform: 'translateY(0px)' },
+                    '50%': { transform: 'translateY(-10px)' },
+                },
+                shimmer: {
+                    '0%': { backgroundPosition: '-1000px 0' },
+                    '100%': { backgroundPosition: '1000px 0' },
+                },
+                marquee: {
+                    '0%': { transform: 'translateX(0)' },
+                    '100%': { transform: 'translateX(-50%)' },
+                },
+            },
+            fontSize: {
+                'display': ['6rem', { lineHeight: '1', letterSpacing: '-0.02em', fontWeight: '700' }],
+                'hero': ['4.5rem', { lineHeight: '1.1', letterSpacing: '-0.01em', fontWeight: '700' }],
+                'title': ['3rem', { lineHeight: '1.2', letterSpacing: '-0.01em', fontWeight: '700' }],
+            },
+            letterSpacing: {
+                'tighter': '-0.02em',
+                'tight': '-0.01em',
+                'wide': '0.1em',
+            },
         },
     },
     plugins: [],

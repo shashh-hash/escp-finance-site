@@ -6,12 +6,10 @@ import Home from './pages/Home';
 import Articles from './pages/Articles';
 import ArticleDetail from './pages/ArticleDetail';
 import About from './pages/About';
-import Events from './pages/Events';
-import Resources from './pages/Resources';
-import Partners from './pages/Partners';
+import Mission from './pages/Mission';
+import News from './pages/News';
 import Join from './pages/Join';
 import Contact from './pages/Contact';
-import FinancialTimes from './pages/FinancialTimes';
 import EasterEgg from './components/EasterEgg';
 import StockTicker from './components/StockTicker';
 import MoneyRain from './components/MoneyRain';
@@ -50,7 +48,7 @@ function App() {
 
     return (
         <Router basename="/escp-finance-site">
-            <div className={`min-h-screen flex flex-col ${matrixMode ? 'matrix-mode' : ''} ${stonksMode ? 'stonks-mode' : ''}`}>
+            <div className={`min-h-screen flex flex-col bg-esf-midnight ${matrixMode ? 'matrix-mode' : ''} ${stonksMode ? 'stonks-mode' : ''}`}>
                 <StockTicker />
                 <Navbar
                     onMoneyRain={() => setMoneyRain(true)}
@@ -58,18 +56,16 @@ function App() {
                     onStockCrash={() => setStockCrash(true)}
                     matrixMode={matrixMode}
                 />
-                <main className="flex-grow pt-16">
+                <main className="flex-grow pt-28">
                     <Routes>
                         <Route path="/" element={<Home />} />
                         <Route path="/articles" element={<Articles />} />
                         <Route path="/articles/:id" element={<ArticleDetail />} />
-                        <Route path="/events" element={<Events />} />
-                        <Route path="/resources" element={<Resources />} />
-                        <Route path="/partners" element={<Partners />} />
+                        <Route path="/mission" element={<Mission />} />
                         <Route path="/about" element={<About />} />
+                        <Route path="/news" element={<News />} />
                         <Route path="/join" element={<Join />} />
                         <Route path="/contact" element={<Contact />} />
-                        <Route path="/ft-premium" element={<FinancialTimes />} />
                     </Routes>
                 </main>
                 <Footer />

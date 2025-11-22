@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Menu, X } from 'lucide-react';
+import logoImg from '../assets/logo.png';
 
 const Navbar = ({ onMoneyRain, onToggleMatrix, onStockCrash, matrixMode }) => {
     const [scrolled, setScrolled] = useState(false);
-    const [logoClicks, setLogoClicks] = useState(0);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const [logoClicks, setLogoClicks] = useState(0);
     const location = useLocation();
 
     useEffect(() => {
@@ -41,41 +43,44 @@ const Navbar = ({ onMoneyRain, onToggleMatrix, onStockCrash, matrixMode }) => {
 
     const links = [
         { name: 'Home', path: '/' },
-        { name: 'Events', path: '/events' },
         { name: 'Articles', path: '/articles' },
-        { name: 'Resources', path: '/resources' },
-        { name: 'Partners', path: '/partners' },
-        { name: 'About', path: '/about' },
-        { name: 'Join', path: '/join' },
+        { name: 'Mission', path: '/mission' },
+        { name: 'About Us', path: '/about' },
+        { name: 'News', path: '/news' },
         { name: 'Contact', path: '/contact' },
     ];
 
     return (
-        <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'glass-nav py-4' : 'bg-transparent py-6'}`}>
-            <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+        <nav className={`fixed top-10 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-esf-midnight/90 backdrop-blur-md border-b border-white/5' : 'bg-transparent'}`}>
+            <div className="max-w-[1400px] mx-auto px-6 py-1 flex justify-between items-center">
+                {/* Logo */}
                 <Link
                     to="/"
                     onClick={handleLogoClick}
                     onDoubleClick={handleLogoDoubleClick}
-                    className="text-2xl font-bold tracking-tighter text-nothing-white select-none cursor-pointer font-dot uppercase"
+                    className="flex items-center gap-3 group"
                 >
-                    ESCP<span className="text-nothing-red">.</span>Finance
+                    <img src={`${import.meta.env.BASE_URL}esf-logo.png`} alt="ESCP Students for Finance" className="h-12 w-auto object-contain" />
+                    <span className="font-heading font-bold text-xl text-white tracking-wide hidden sm:block">ESCP Students for Finance</span>
                 </Link>
 
                 {/* Desktop Menu */}
-                <div className="hidden md:flex items-center gap-8">
+                <div className="hidden lg:flex items-center gap-1">
                     {links.map((link) => (
                         <Link
                             key={link.name}
                             to={link.path}
-                            className="text-sm font-medium text-gray-300 hover:text-nothing-red transition-colors font-dot uppercase tracking-widest"
+                            className={`px-6 py-3 rounded-full font-sans text-base font-medium transition-all ${location.pathname === link.path
+                                ? 'bg-white/10 text-white border border-white/10'
+                                : 'text-esf-silver hover:text-white hover:bg-white/5'
+                                }`}
                         >
                             {link.name}
                         </Link>
                     ))}
                     <Link
                         to="/join"
-                        className="px-5 py-2 bg-nothing-white text-nothing-black font-bold text-sm hover:bg-nothing-red hover:text-white transition-colors font-dot uppercase tracking-widest"
+                        className="ml-4 px-8 py-3 bg-esf-accent text-esf-midnight font-heading font-bold text-base rounded-full hover:bg-white transition-all shadow-lg hover:shadow-esf-accent/20"
                     >
                         Join Now
                     </Link>
@@ -83,17 +88,11 @@ const Navbar = ({ onMoneyRain, onToggleMatrix, onStockCrash, matrixMode }) => {
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="md:hidden text-white z-50"
+                    className="lg:hidden text-white"
                     onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                     aria-label="Toggle menu"
                 >
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        {mobileMenuOpen ? (
-                            <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                        ) : (
-                            <path strokeLinecap="square" strokeLinejoin="miter" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                        )}
-                    </svg>
+                    {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
                 </button>
             </div>
 
@@ -105,33 +104,27 @@ const Navbar = ({ onMoneyRain, onToggleMatrix, onStockCrash, matrixMode }) => {
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="md:hidden bg-nothing-black border-t border-white/10 overflow-hidden"
+                        className="lg:hidden bg-esf-midnight border-t border-white/10 overflow-hidden"
                     >
-                        <div className="px-6 py-4 space-y-4">
+                        <div className="px-6 py-4 space-y-2">
                             {links.map((link) => (
                                 <Link
                                     key={link.name}
                                     to={link.path}
-                                    className="block text-sm font-medium text-gray-300 hover:text-nothing-red transition-colors font-dot uppercase tracking-widest py-2"
+                                    className={`block text-sm font-sans font-medium py-3 border-b border-white/5 ${location.pathname === link.path
+                                        ? 'text-esf-accent'
+                                        : 'text-esf-silver hover:text-white'
+                                        }`}
                                 >
                                     {link.name}
                                 </Link>
                             ))}
                             <Link
                                 to="/join"
-                                className="block w-full text-center px-5 py-3 bg-nothing-white text-nothing-black font-bold text-sm hover:bg-nothing-red hover:text-white transition-colors font-dot uppercase tracking-widest"
+                                className="block w-full text-center px-6 py-4 bg-esf-accent text-esf-midnight font-heading font-bold text-sm rounded-full hover:bg-white transition-colors mt-6"
                             >
                                 Join Now
                             </Link>
-                            <button
-                                onClick={onToggleMatrix}
-                                className={`block w-full text-center px-5 py-3 font-bold text-sm transition-colors font-dot uppercase tracking-widest border-2 ${matrixMode
-                                    ? 'bg-green-500 text-black border-green-500'
-                                    : 'bg-transparent text-white border-white/20 hover:border-nothing-red'
-                                    }`}
-                            >
-                                {matrixMode ? '✓ Matrix Mode' : 'Matrix Mode'}
-                            </button>
                         </div>
                     </motion.div>
                 )}

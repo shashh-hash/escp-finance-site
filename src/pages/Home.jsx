@@ -1,145 +1,182 @@
-import React from 'react';
-import { motion } from 'framer-motion';
-import { ArrowRight, TrendingUp, Users, BookOpen } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { ArrowRight, Globe, TrendingUp, Users, Calendar, ArrowUpRight, Zap, Activity, Shield, BarChart3 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
+    const { scrollY } = useScroll();
+    const y1 = useTransform(scrollY, [0, 500], [0, 100]);
+
+    const stats = [
+        { label: "Founding Year", value: "Est. 2025" },
+        { label: "Campus Based", value: "Turin" },
+        { label: "Student Society", value: "New" },
+        { label: "Student Led", value: "100%" }
+    ];
+
+    const features = [
+        {
+            title: "Investment Banking",
+            description: "Master M&A, capital markets, and valuation through hands-on workshops.",
+            icon: <BarChart3 className="w-8 h-8" />,
+            link: "/articles"
+        },
+        {
+            title: "Private Equity",
+            description: "Deep dive into LBO modeling, deal structuring, and portfolio management.",
+            icon: <Shield className="w-8 h-8" />,
+            link: "/articles"
+        },
+        {
+            title: "Market Finance",
+            description: "Explore quantitative strategies, trading algorithms, and market analysis.",
+            icon: <TrendingUp className="w-8 h-8" />,
+            link: "/articles"
+        }
+    ];
+
     return (
-        <div className="bg-nothing-black min-h-screen font-sans text-nothing-white overflow-x-hidden">
-            {/* Hero Section */}
-            <section className="relative min-h-screen flex items-center justify-center pt-20 bg-grid">
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-nothing-black/50 to-nothing-black pointer-events-none" />
+        <div className="min-h-screen bg-esf-midnight text-white font-sans selection:bg-esf-accent selection:text-esf-midnight">
 
-                <div className="max-w-7xl mx-auto px-6 relative z-10 text-center">
-                    <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <span className="inline-block py-1 px-3 border border-nothing-red text-nothing-red text-xs font-dot uppercase tracking-widest mb-6 bg-nothing-red/10">
-                            Est. 2018
-                        </span>
-                        <h1 className="text-5xl md:text-8xl font-bold mb-6 tracking-tighter leading-tight font-dot uppercase">
-                            The Future of <br />
-                            <span className="text-nothing-red">Finance</span> is Here<Link to="/ft-premium" className="cursor-default hover:text-nothing-red transition-colors">.</Link>
-                        </h1>
-                        <p className="text-xl text-gray-400 mb-10 max-w-2xl mx-auto font-mono">
-                            ESCP Students for Finance. Bridging the gap between academic theory and market reality.
-                        </p>
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <Link to="/join" className="btn-nothing">
-                                Become a Member
-                            </Link>
-                            <Link to="/events" className="px-6 py-3 border border-white/20 text-white hover:border-nothing-white transition-colors font-dot uppercase tracking-widest text-sm">
-                                View Events
-                            </Link>
-                        </div>
-                    </motion.div>
-                </div>
-            </section >
+            {/* Hero Section - Premium & Professional */}
+            <section className="relative min-h-screen flex flex-col justify-center p-4 md:p-8 pt-32 overflow-hidden">
+                {/* Background Gradients */}
+                <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-esf-blue/20 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/3 pointer-events-none"></div>
+                <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-esf-accent/5 rounded-full blur-[100px] translate-y-1/3 -translate-x-1/4 pointer-events-none"></div>
 
-            {/* Features Grid */}
-            < section className="py-24 px-6 bg-nothing-black border-t border-white/10" >
-                <div className="max-w-7xl mx-auto">
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {[
-                            { icon: <TrendingUp size={32} />, title: "Market Analysis", desc: "Weekly deep dives into global markets and asset classes." },
-                            { icon: <Users size={32} />, title: "Networking", desc: "Connect with alumni and professionals from top tier firms." },
-                            { icon: <BookOpen size={32} />, title: "Education", desc: "Workshops on valuation, modeling, and trading strategies." }
-                        ].map((feature, index) => (
-                            <div
-                                key={index}
-                                className="card-nothing group"
-                            >
-                                <div className="mb-6 text-nothing-red group-hover:scale-110 transition-transform duration-300">{feature.icon}</div>
-                                <h3 className="text-xl font-bold mb-4 text-white font-dot uppercase">{feature.title}</h3>
-                                <p className="text-gray-400 font-mono text-sm">{feature.desc}</p>
+                <div className="max-w-[1400px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-6 relative z-10">
+
+                    {/* Main Title Area */}
+                    <div className="lg:col-span-8 flex flex-col justify-center">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8 }}
+                        >
+                            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/5 border border-white/10 mb-8 backdrop-blur-sm">
+                                <span className="w-2 h-2 rounded-full bg-esf-accent animate-pulse"></span>
+                                <span className="text-sm font-medium text-esf-silver tracking-wide uppercase">Est. 2025 • Turin Campus</span>
                             </div>
-                        ))}
-                    </div>
-                </div>
-            </section >
 
-            {/* President's Welcome */}
-            < section className="py-24 px-6 bg-nothing-dark-grey border-y border-white/10 bg-grid" >
-                <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
-                    <div className="w-full md:w-1/3">
-                        <div className="aspect-[3/4] border border-white/20 relative group">
-                            <div className="absolute inset-0 bg-nothing-red/20 opacity-0 group-hover:opacity-100 transition-opacity z-10 mix-blend-overlay" />
-                            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=800" alt="President" className="w-full h-full object-cover grayscale contrast-125" />
-                            <div className="absolute bottom-0 left-0 right-0 bg-nothing-black/90 p-6 border-t border-white/20">
-                                <h3 className="text-2xl font-bold text-white font-dot uppercase">Alex Rivera</h3>
-                                <p className="text-nothing-red font-mono text-sm">President, 2024-2025</p>
+                            <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold leading-[1.1] tracking-tight mb-8">
+                                The Future of <br />
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-esf-silver">Finance</span>
+                            </h1>
+
+                            <p className="text-lg md:text-xl text-esf-silver max-w-xl leading-relaxed mb-10">
+                                Bridging the gap between academic theory and professional practice. We are building the next generation of finance leaders.
+                            </p>
+
+                            <div className="flex flex-wrap gap-4">
+                                <Link to="/join" className="px-8 py-4 bg-esf-accent text-esf-midnight font-heading font-bold rounded-full hover:bg-white transition-all duration-300 shadow-lg shadow-esf-accent/20 flex items-center gap-2 group">
+                                    Join the Society
+                                    <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                                </Link>
+                                <Link to="/about" className="px-8 py-4 border border-white/10 text-white font-medium rounded-full hover:bg-white/5 transition-colors duration-300 backdrop-blur-sm">
+                                    Learn More
+                                </Link>
                             </div>
-                        </div>
+                        </motion.div>
                     </div>
-                    <div className="w-full md:w-2/3">
-                        <span className="text-nothing-red font-dot uppercase tracking-widest mb-2 block">Leadership</span>
-                        <h2 className="text-4xl font-bold mb-6 font-dot uppercase">Welcome from the President</h2>
-                        <p className="text-xl text-gray-300 leading-relaxed mb-6 font-mono">
-                            "At ESCP Students for Finance, we believe that the best way to learn finance is to do finance. Our society is built on the pillars of practical application, rigorous analysis, and community support. Whether you are just starting your journey or looking to break into top-tier investment banking, you will find a home here."
-                        </p>
-                        <div className="h-px w-24 bg-nothing-red mb-6" />
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Signature_sample.svg/1200px-Signature_sample.svg.png" alt="Signature" className="h-12 invert opacity-70" />
-                    </div>
-                </div>
-            </section >
 
-            {/* Alumni Success */}
-            < section className="py-24 px-6 bg-nothing-black" >
-                <div className="max-w-7xl mx-auto">
-                    <h2 className="text-4xl font-bold mb-12 text-center font-dot uppercase">Our Alumni Network</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                        {[
-                            { name: "Elena K.", role: "Analyst at Goldman Sachs", quote: "The technical workshops gave me the edge I needed for interviews." },
-                            { name: "Marc D.", role: "Associate at Blackstone", quote: "Networking events opened doors I didn't know existed." },
-                            { name: "Sophie L.", role: "Consultant at McKinsey", quote: "I met my future co-founders at the annual trading competition." }
-                        ].map((alum, i) => (
-                            <div key={i} className="p-8 border border-white/10 hover:border-nothing-red transition-colors bg-nothing-dark-grey relative overflow-hidden group">
-                                <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
-                                    <Users size={64} />
+                    {/* Side Grid - Professional Stats */}
+                    <div className="lg:col-span-4 flex flex-col gap-6 mt-12 lg:mt-0">
+                        {/* Stat Card */}
+                        <div className="flex-1 bg-esf-navy/50 backdrop-blur-md rounded-3xl p-8 border border-white/5 flex flex-col justify-center group hover:border-esf-accent/30 transition-colors">
+                            <div className="flex justify-between items-start mb-4">
+                                <div className="p-3 rounded-xl bg-esf-blue/30 text-esf-accent">
+                                    <Users className="w-6 h-6" />
                                 </div>
-                                <p className="text-lg text-gray-300 italic mb-6 font-mono">"{alum.quote}"</p>
-                                <div className="border-t border-white/10 pt-4">
-                                    <h4 className="font-bold text-white font-dot uppercase">{alum.name}</h4>
-                                    <p className="text-nothing-red text-sm font-mono">{alum.role}</p>
-                                </div>
+                                <ArrowUpRight className="w-5 h-5 text-esf-silver group-hover:text-white transition-colors" />
                             </div>
-                        ))}
-                    </div>
-                </div>
-            </section >
+                            <div className="text-5xl font-heading font-bold text-white mb-2">2025</div>
+                            <div className="text-esf-silver font-medium">Founding Year</div>
+                        </div>
 
-            {/* Upcoming Events Preview */}
-            < section className="py-24 px-6 bg-nothing-black border-t border-white/10" >
-                <div className="max-w-7xl mx-auto">
-                    <div className="flex justify-between items-end mb-12">
-                        <h2 className="text-4xl font-bold font-dot uppercase">Upcoming Events</h2>
-                        <Link to="/events" className="text-nothing-red hover:text-white transition-colors flex items-center gap-2 font-dot uppercase tracking-widest text-sm">
-                            View All <ArrowRight size={18} />
-                        </Link>
-                    </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                        <div className="group relative overflow-hidden border border-white/10 aspect-video bg-nothing-dark-grey">
-                            <img src="https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?auto=format&fit=crop&q=80&w=800" alt="Event" className="w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity grayscale" />
-                            <div className="absolute inset-0 bg-grid opacity-20" />
-                            <div className="absolute bottom-0 left-0 p-6 w-full bg-gradient-to-t from-black to-transparent">
-                                <span className="text-nothing-red font-bold mb-1 block font-mono">March 15, 2024</span>
-                                <h3 className="text-2xl font-bold text-white font-dot uppercase">Investment Banking Workshop</h3>
-                            </div>
-                        </div>
-                        <div className="group relative overflow-hidden border border-white/10 aspect-video bg-nothing-dark-grey">
-                            <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=800" alt="Event" className="w-full h-full object-cover opacity-50 group-hover:opacity-70 transition-opacity grayscale" />
-                            <div className="absolute inset-0 bg-grid opacity-20" />
-                            <div className="absolute bottom-0 left-0 p-6 w-full bg-gradient-to-t from-black to-transparent">
-                                <span className="text-nothing-red font-bold mb-1 block font-mono">April 2, 2024</span>
-                                <h3 className="text-2xl font-bold text-white font-dot uppercase">Guest Speaker: CEO of BlackRock France</h3>
+                        {/* Article Card */}
+                        <div className="flex-1 bg-gradient-to-br from-esf-blue to-esf-navy rounded-3xl p-8 border border-white/5 flex flex-col justify-center relative overflow-hidden group">
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-esf-accent/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"></div>
+
+                            <div className="relative z-10">
+                                <div className="text-esf-accent text-sm font-bold uppercase tracking-wider mb-2">Featured Article</div>
+                                <h3 className="text-2xl font-heading font-bold mb-2">The Future of Fintech</h3>
+                                <p className="text-esf-silver text-sm mb-6">Explore how technology is reshaping financial services.</p>
+
+                                <Link to="/articles" className="inline-flex items-center gap-2 text-sm font-bold hover:text-esf-accent transition-colors">
+                                    Read Article <ArrowRight className="w-4 h-4" />
+                                </Link>
                             </div>
                         </div>
                     </div>
                 </div>
-            </section >
-        </div >
+            </section>
+
+            {/* Marquee Section - Clean & Professional */}
+            <section className="py-20 bg-white overflow-hidden">
+                <div className="flex w-max animate-marquee hover:[animation-play-state:paused]">
+                    {[...Array(2)].map((_, i) => (
+                        <div key={i} className="flex gap-16 px-8">
+                            {["Investment Banking", "Private Equity", "Asset Management", "Corporate Finance", "Fintech", "Sales & Trading"].map((text, j) => (
+                                <div key={j} className="flex items-center gap-4 group cursor-default">
+                                    <span className="text-4xl md:text-6xl font-heading font-bold text-esf-midnight/10 group-hover:text-esf-blue transition-colors duration-300 whitespace-nowrap">
+                                        {text}
+                                    </span>
+                                    <div className="w-2 h-2 bg-esf-accent rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                                </div>
+                            ))}
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            {/* Features Grid - Bento Style */}
+            <section className="py-32 px-4 md:px-8 max-w-[1400px] mx-auto">
+                <div className="mb-16">
+                    <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6">Our Focus Areas</h2>
+                    <p className="text-xl text-esf-silver max-w-2xl">Comprehensive coverage of the financial landscape through specialized tracks and resources.</p>
+                </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    {features.map((feature, index) => (
+                        <div key={index} className="bg-esf-navy/40 backdrop-blur-sm rounded-3xl p-10 border border-white/5 hover:border-esf-accent/30 hover:bg-esf-navy/60 transition-all duration-300 group h-[400px] flex flex-col justify-between">
+
+                            <div>
+                                <div className="w-14 h-14 bg-esf-blue/30 rounded-2xl flex items-center justify-center mb-8 text-esf-accent group-hover:scale-110 transition-transform duration-300">
+                                    {feature.icon}
+                                </div>
+                                <h3 className="text-2xl font-heading font-bold mb-4">{feature.title}</h3>
+                                <p className="text-esf-silver leading-relaxed">
+                                    {feature.description}
+                                </p>
+                            </div>
+
+                            <div>
+                                <Link to={feature.link} className="inline-flex items-center gap-2 text-sm font-bold text-white group-hover:text-esf-accent transition-colors">
+                                    Explore Track <ArrowRight className="w-4 h-4" />
+                                </Link>
+                            </div>
+                        </div>
+                    ))}
+                </div>
+            </section>
+
+            {/* CTA Section */}
+            <section className="py-32 px-4 text-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-b from-esf-midnight to-esf-navy pointer-events-none"></div>
+                <div className="relative z-10 max-w-4xl mx-auto">
+                    <h2 className="text-4xl md:text-6xl font-heading font-bold mb-8">
+                        Ready to Launch Your Career?
+                    </h2>
+                    <p className="text-xl text-esf-silver mb-12 max-w-2xl mx-auto">
+                        Join a community of ambitious students and gain access to exclusive events, workshops, and networking opportunities.
+                    </p>
+                    <Link to="/join" className="inline-block px-12 py-5 bg-white text-esf-midnight font-heading font-bold text-lg rounded-full hover:bg-esf-accent transition-all duration-300 shadow-xl shadow-white/10">
+                        Become a Member
+                    </Link>
+                </div>
+            </section>
+
+        </div>
     );
 };
 

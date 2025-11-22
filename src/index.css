@@ -1,97 +1,72 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=DotGothic16&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  body {
-    @apply bg-nothing-black text-nothing-white font-sans antialiased selection:bg-nothing-red selection:text-white;
-    background-color: #000000;
+  html {
+    scroll-behavior: smooth;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-dot uppercase tracking-widest;
+  body {
+    @apply bg-esf-midnight text-white font-sans antialiased selection:bg-esf-accent selection:text-esf-midnight;
   }
 }
 
 @layer utilities {
-  .bg-grid {
-    background-size: 40px 40px;
-    background-image: linear-gradient(to right, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-  }
-
-  .glass-nav {
-    @apply bg-nothing-black/80 backdrop-blur-md border-b border-white/20;
-  }
-
   .text-gradient {
-    @apply text-nothing-white;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-white to-esf-silver;
   }
 
-  .btn-nothing {
-    @apply font-dot px-6 py-3 bg-nothing-red text-white hover:bg-red-700 transition-colors uppercase tracking-widest text-sm;
+  .glass {
+    @apply bg-esf-navy/50 backdrop-blur-md border border-white/5;
   }
 
-  .card-nothing {
-    @apply bg-nothing-dark-grey border border-white/10 hover:border-nothing-red transition-colors p-6;
+  .glass-hover {
+    @apply hover:bg-esf-navy/70 hover:border-esf-accent/30 transition-all duration-300;
   }
 
-  /* Matrix Mode Overrides */
-  .matrix-mode {
-    @apply font-mono;
-    background-color: #000 !important;
-    color: #00ff00 !important;
+  .card-shadow {
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
   }
+}
 
-  .matrix-mode * {
-    border-color: #003300 !important;
-    font-family: 'Courier New', Courier, monospace !important;
-  }
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
 
-  .matrix-mode .text-nothing-red,
-  .matrix-mode .text-finance-blue,
-  .matrix-mode .text-finance-gold,
-  .matrix-mode .text-gradient {
-    color: #00ff00 !important;
-    background: none !important;
-    -webkit-text-fill-color: #00ff00 !important;
-    text-shadow: 0 0 5px #00ff00;
-  }
+::-webkit-scrollbar-track {
+  background: #0B0C15;
+}
 
-  .matrix-mode img {
-    filter: grayscale(100%) contrast(1.2) brightness(0.8) sepia(100%) hue-rotate(50deg) saturate(5);
-    mix-blend-mode: hard-light;
-  }
+::-webkit-scrollbar-thumb {
+  background: #303151;
+  border-radius: 4px;
+}
 
-  .matrix-mode .glass-nav,
-  .matrix-mode .bg-white\/5,
-  .matrix-mode .bg-white\/10,
-  .matrix-mode .bg-premium-black,
-  .matrix-mode .bg-nothing-dark-grey {
-    background-color: #001100 !important;
-    backdrop-filter: none !important;
-  }
+::-webkit-scrollbar-thumb:hover {
+  background: #4A4B75;
+}
 
-  /* Custom Cursor */
-  body {
-    cursor: crosshair;
-  }
+/* Matrix Mode */
+.matrix-mode {
+  filter: hue-rotate(120deg) saturate(3);
+}
 
-  a,
-  button,
-  .cursor-pointer {
-    cursor: pointer;
-  }
+.matrix-mode body {
+  background: #000;
+  color: #0f0;
+}
 
-  /* Smooth Scrolling */
-  html {
-    scroll-behavior: smooth;
-  }
+.matrix-mode * {
+  border-color: #0f0 !important;
+}
+
+/* Stonks Mode */
+.stonks-mode {
+  font-family: 'Comic Sans MS', cursive !important;
+}
+
+.stonks-mode * {
+  font-family: 'Comic Sans MS', cursive !important;
 }
