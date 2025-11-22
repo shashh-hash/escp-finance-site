@@ -18,15 +18,19 @@
   }
 
   .glass {
-    @apply bg-slate-50/80 backdrop-blur-md border border-esf-midnight/10;
+    @apply bg-white/80 backdrop-blur-xl border border-esf-midnight/10 shadow-lg shadow-esf-midnight/5;
   }
 
   .glass-hover {
-    @apply hover:bg-slate-100 hover:border-esf-accent/30 transition-all duration-300;
+    @apply hover:bg-white hover:border-esf-accent/30 hover:shadow-xl hover:shadow-esf-accent/10 transition-all duration-300;
   }
 
   .card-shadow {
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 4px 24px -2px rgba(11, 12, 21, 0.08), 0 2px 8px -2px rgba(11, 12, 21, 0.04);
+  }
+
+  .card-shadow-hover {
+    box-shadow: 0 12px 40px -4px rgba(11, 12, 21, 0.12), 0 4px 16px -4px rgba(11, 12, 21, 0.08);
   }
 }
 

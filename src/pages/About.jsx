@@ -107,7 +107,7 @@ const About = () => {
             </section>
 
             {/* Stats Section */}
-            <section className="py-16 px-6 border-y border-esf-midnight/10 bg-slate-50/30">
+            <section className="py-16 px-6 border-y border-esf-midnight/10 bg-white/30">
                 <div className="max-w-7xl mx-auto">
                     <div className="grid md:grid-cols-4 gap-8">
                         {stats.map((stat, index) => (
@@ -154,7 +154,7 @@ const About = () => {
             </section>
 
             {/* Team Section */}
-            <section className="py-24 px-6 bg-slate-50 relative">
+            <section className="py-24 px-6 bg-white relative">
                 <div className="absolute inset-0 bg-grid opacity-5"></div>
                 <div className="max-w-7xl mx-auto relative z-10">
                     <h2 className="text-4xl font-heading font-bold mb-12 text-center">

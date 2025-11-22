@@ -88,7 +88,7 @@ const Mission = () => {
             </section>
 
             {/* Goals Section */}
-            <section className="py-20 px-6 bg-slate-50 relative">
+            <section className="py-20 px-6 bg-white relative">
                 <div className="absolute inset-0 bg-grid opacity-5"></div>
                 <div className="max-w-4xl mx-auto relative z-10">
                     <h2 className="text-4xl font-heading font-bold mb-12 text-center">

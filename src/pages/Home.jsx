@@ -82,28 +82,28 @@ const Home = () => {
                     {/* Side Grid - Professional Stats */}
                     <div className="lg:col-span-4 flex flex-col gap-6 mt-12 lg:mt-0">
                         {/* Stat Card */}
-                        <div className="flex-1 bg-slate-50/80 backdrop-blur-md rounded-lg p-8 border border-esf-midnight/10 flex flex-col justify-center group hover:border-esf-accent/30 transition-colors">
-                            <div className="flex justify-between items-start mb-4">
-                                <div className="p-3 rounded-xl bg-esf-blue/30 text-esf-accent">
-                                    <Users className="w-6 h-6" />
+                        <div className="flex-1 bg-white rounded-xl p-8 border border-esf-midnight/10 card-shadow flex flex-col justify-center group hover:border-esf-accent/30 hover:card-shadow-hover transition-all duration-300">
+                            <div className="flex justify-between items-start mb-6">
+                                <div className="p-4 rounded-xl bg-gradient-to-br from-esf-accent/10 to-esf-blue/10 text-esf-accent">
+                                    <Users className="w-7 h-7" />
                                 </div>
-                                <ArrowUpRight className="w-5 h-5 text-esf-blue group-hover:text-esf-midnight transition-colors" />
+                                <ArrowUpRight className="w-5 h-5 text-esf-blue group-hover:text-esf-accent transition-colors" />
                             </div>
-                            <div className="text-5xl font-heading font-bold text-esf-midnight mb-2">2025</div>
-                            <div className="text-esf-blue font-medium">Founding Year</div>
+                            <div className="text-6xl font-heading font-bold text-esf-midnight mb-3">2025</div>
+                            <div className="text-slate-600 font-medium text-lg">Founding Year</div>
                         </div>
 
                         {/* Article Card */}
-                        <div className="flex-1 bg-gradient-to-br from-esf-accent/10 to-esf-blue/10 rounded-lg p-8 border border-esf-midnight/10 flex flex-col justify-center relative overflow-hidden group">
-                            <div className="absolute top-0 right-0 w-32 h-32 bg-esf-accent/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"></div>
+                        <div className="flex-1 bg-white rounded-xl p-8 border border-esf-midnight/10 card-shadow flex flex-col justify-center relative overflow-hidden group hover:border-esf-accent/30 hover:card-shadow-hover transition-all duration-300">
+                            <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-esf-accent/5 to-esf-blue/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
 
                             <div className="relative z-10">
-                                <div className="text-esf-accent text-sm font-bold uppercase tracking-wider mb-2">Featured Article</div>
-                                <h3 className="text-2xl font-heading font-bold mb-2">The Future of Fintech</h3>
-                                <p className="text-esf-blue text-sm mb-6">Explore how technology is reshaping financial services.</p>
+                                <div className="inline-block px-3 py-1 bg-esf-accent/10 text-esf-accent text-xs font-bold uppercase tracking-wider rounded-full mb-4">Featured</div>
+                                <h3 className="text-2xl font-heading font-bold mb-3 text-esf-midnight">Market Trends 2025</h3>
+                                <p className="text-slate-600 text-sm mb-6 leading-relaxed">Latest insights from our research team</p>
 
-                                <Link to="/articles" className="inline-flex items-center gap-2 text-sm font-bold hover:text-esf-accent transition-colors">
-                                    Read Article <ArrowRight className="w-4 h-4" />
+                                <Link to="/articles" className="inline-flex items-center gap-2 text-sm font-bold text-esf-accent hover:gap-3 transition-all">
+                                    Read More <ArrowRight className="w-4 h-4" />
                                 </Link>
                             </div>
                         </div>
@@ -138,23 +138,23 @@ const Home = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {features.map((feature, index) => (
-                        <div key={index} className="bg-slate-100/80 backdrop-blur-sm rounded-lg p-10 border border-esf-midnight/10 hover:border-esf-accent/30 hover:bg-slate-200/80 transition-all duration-300 group h-[400px] flex flex-col justify-between">
+                        <div key={index} className="bg-white rounded-xl p-10 border border-esf-midnight/10 card-shadow hover:border-esf-accent/30 hover:card-shadow-hover transition-all duration-300 group h-[420px] flex flex-col justify-between">
 
                             <div>
-                                <div className="w-14 h-14 bg-esf-blue/30 rounded-lg flex items-center justify-center mb-8 text-esf-accent group-hover:scale-110 transition-transform duration-300">
+                                <div className="w-16 h-16 bg-gradient-to-br from-esf-accent/10 to-esf-blue/10 rounded-xl flex items-center justify-center mb-8 text-esf-accent group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
                                     {feature.icon}
                                 </div>
-                                <h3 className="text-2xl font-heading font-bold mb-4">{feature.title}</h3>
-                                <p className="text-esf-blue leading-relaxed">
+                                <h3 className="text-2xl font-heading font-bold mb-4 text-esf-midnight">{feature.title}</h3>
+                                <p className="text-slate-600 leading-relaxed text-base">
                                     {feature.description}
                                 </p>
                             </div>
 
-                            <div>
-                                <Link to={feature.link} className="inline-flex items-center gap-2 text-sm font-bold text-esf-midnight group-hover:text-esf-accent transition-colors">
-                                    Explore Track <ArrowRight className="w-4 h-4" />
-                                </Link>
+                            <div className="flex items-center gap-2 text-esf-accent font-bold text-sm group-hover:gap-3 transition-all">
+                                <span>Learn More</span>
+                                <ArrowRight className="w-4 h-4" />
                             </div>
+
                         </div>
                     ))}
                 </div>

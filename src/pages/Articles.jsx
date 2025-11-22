@@ -49,7 +49,7 @@ const Articles = () => {
                                 className="group cursor-pointer glass glass-hover rounded-xl overflow-hidden"
                             >
                                 <Link to={`/articles/${article.id}`}>
-                                    <div className="aspect-[4/3] overflow-hidden bg-slate-50 relative">
+                                    <div className="aspect-[4/3] overflow-hidden bg-white relative">
                                         <div className="absolute inset-0 bg-esf-accent/20 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
                                         <img
                                             src={article.image}
