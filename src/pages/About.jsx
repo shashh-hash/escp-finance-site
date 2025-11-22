@@ -1,16 +1,77 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Users, Target, Award, TrendingUp, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import lorenzoImg from '../assets/lorenzo.jpg';
 
 const About = () => {
-    const team = [
-        { name: "Lorenzo Sargiani", role: "President", image: lorenzoImg },
-        { name: "Events Team", role: "Event Coordinators", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800" },
-        { name: "Content Team", role: "Research & Articles", image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800" },
-        { name: "Tech Team", role: "Digital & Innovation", image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=800" },
-    ];
+    const [activeTab, setActiveTab] = useState("Board");
+
+    const teamData = {
+        "Board": [
+            { name: "Lorenzo Sargiani", role: "President", image: lorenzoImg, isPresident: true },
+            { name: "Ines Desmaretz", role: "Vice President", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=800" },
+            { name: "Daria Iannuzzi", role: "Vice President", image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=800" },
+            { name: "Christos Gerontopoulos", role: "Board Member", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800" },
+            { name: "Martina Proietti Silvestri", role: "Board Member", image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=800" },
+            { name: "Alex Toumasson", role: "Board Member", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=800" },
+            { name: "Lucas Thai", role: "Board Member", image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800" },
+        ],
+        "Strategy": [
+            { name: "Flavio Antonuzzo", role: "Head of Strategy", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=800" },
+            { name: "Tommaso Girani", role: "Head of Strategy", image: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&q=80&w=800" },
+            { name: "Carlo Giulio Rizzuto", role: "Strategy Associate", image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=800" },
+        ],
+        "Events": [
+            { name: "Daria Iannuzzi", role: "Head of Events", image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=800" },
+            { name: "Martina Proietti Silvestri", role: "Head of Events", image: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&q=80&w=800" },
+            { name: "Armand Vahé Francesco Gaidc", role: "Events Associate", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=800" },
+        ],
+        "Research": [
+            { name: "Adriano Cogorno", role: "Head of Research", image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=800" },
+            { name: "Giuseppe Mansueto", role: "Head of Research", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800" },
+            { name: "Giorgio D’Innocenzo", role: "Research Associate", image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800" },
+            { name: "Davide Biselli", role: "Research Associate", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=800" },
+            { name: "Frederic Wessling Melonari", role: "Research Associate", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=800" },
+            { name: "Federico Tempestini", role: "Research Associate", image: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&q=80&w=800" },
+        ],
+        "Articles": [
+            { name: "Luca Citton", role: "Head of Articles", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=800" },
+            { name: "Francesco Kaitsas", role: "Head of Articles", image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800" },
+            { name: "Francesco Baci Paci", role: "Articles Associate", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800" },
+            { name: "Federico Furioso", role: "Articles Associate", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=800" },
+            { name: "Giovanni Ciccarello", role: "Articles Associate", image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=800" },
+            { name: "Giorgio Gheorghis Tsingros", role: "Articles Associate", image: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&q=80&w=800" },
+        ],
+        "Marketing": [
+            { name: "Valentina Petrini", role: "Head of Marketing", image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800" },
+            { name: "Alessio Penzo", role: "Marketing Associate", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=800" },
+        ],
+        "Instagram": [
+            { name: "Beatrice Pellini", role: "Head of Instagram", image: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=800" },
+            { name: "Camilla Barra", role: "Instagram Associate", image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=800" },
+            { name: "Federico Valente", role: "Instagram Associate", image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=800" },
+        ],
+        "LinkedIn": [
+            { name: "Marina Meucci", role: "Head of LinkedIn", image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=800" },
+            { name: "Giulio Bonifacio", role: "LinkedIn Associate", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800" },
+            { name: "Francesco Maria Liaci", role: "LinkedIn Associate", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=800" },
+        ],
+        "Tech": [
+            { name: "Shashank Tripathi", role: "Head of Tech", image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=800" },
+            { name: "Augustin Mons", role: "Tech Associate", image: "https://images.unsplash.com/photo-1519345182560-3f2917c472ef?auto=format&fit=crop&q=80&w=800" },
+            { name: "Jingyi Wang", role: "Tech Associate", image: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=800" },
+        ],
+        "HR": [
+            { name: "Edoardo Cerrano", role: "Head of HR", image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=800" },
+            { name: "Alessandra Boarolo", role: "HR Associate", image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&q=80&w=800" },
+            { name: "Tommaso Donati", role: "HR Associate", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800" },
+            { name: "Rodolfo Barberis", role: "HR Associate", image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=800" },
+            { name: "Emanuele Ferrara", role: "HR Associate", image: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=800" },
+        ]
+    };
+
+    const tabs = Object.keys(teamData);
 
     const stats = [
         { icon: <Users className="w-8 h-8" />, value: "Est. 2025", label: "Founding Year" },
@@ -96,34 +157,114 @@ const About = () => {
             <section className="py-24 px-6 bg-esf-dark-navy relative">
                 <div className="absolute inset-0 bg-grid opacity-5"></div>
                 <div className="max-w-7xl mx-auto relative z-10">
-                    <h2 className="text-4xl font-heading font-bold mb-16 text-center">
+                    <h2 className="text-4xl font-heading font-bold mb-12 text-center">
                         Our Team
                     </h2>
-                    <div className="grid md:grid-cols-4 gap-8">
-                        {team.map((member, index) => (
-                            <motion.div
-                                key={member.name}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                className="group"
+
+                    {/* Department Tabs */}
+                    <div className="flex flex-wrap justify-center gap-4 mb-16">
+                        {tabs.map((tab) => (
+                            <button
+                                key={tab}
+                                onClick={() => setActiveTab(tab)}
+                                className={`px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 ${activeTab === tab
+                                    ? 'bg-esf-accent text-esf-midnight shadow-lg shadow-esf-accent/20 scale-105'
+                                    : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white'
+                                    }`}
                             >
-                                <div className="aspect-square overflow-hidden rounded-xl mb-6 bg-esf-midnight border border-white/10 relative">
-                                    <div className="absolute inset-0 bg-esf-accent/20 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
-                                    <img
-                                        src={member.image}
-                                        alt={member.name}
-                                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 grayscale group-hover:grayscale-0"
-                                    />
-                                </div>
-                                <h3 className="text-xl font-heading font-bold text-white mb-1 group-hover:text-esf-accent transition-colors">
-                                    {member.name}
-                                </h3>
-                                <p className="text-gray-500">{member.role}</p>
-                            </motion.div>
+                                {tab}
+                            </button>
                         ))}
                     </div>
+
+                    {/* Team Display */}
+                    {activeTab === "Board" ? (
+                        <div className="space-y-12">
+                            {/* Row 1: Leadership (President + VPs) */}
+                            <div className="flex flex-wrap justify-center gap-8">
+                                {teamData["Board"].filter(m => m.role === "President" || m.role === "Vice President").map((member, index) => (
+                                    <motion.div
+                                        key={member.name}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: index * 0.1 }}
+                                        className="group w-full max-w-xs"
+                                    >
+                                        <div className="aspect-square overflow-hidden rounded-xl mb-6 bg-esf-midnight border border-white/10 relative">
+                                            <div className="absolute inset-0 bg-esf-accent/20 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
+                                            <img
+                                                src={member.image}
+                                                alt={member.name}
+                                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 grayscale group-hover:grayscale-0"
+                                            />
+                                        </div>
+                                        <div className="text-center">
+                                            <h3 className="text-xl font-heading font-bold text-white mb-1 group-hover:text-esf-accent transition-colors">
+                                                {member.name}
+                                            </h3>
+                                            <p className="text-gray-500">{member.role}</p>
+                                        </div>
+                                    </motion.div>
+                                ))}
+                            </div>
+
+                            {/* Row 2: Board Members */}
+                            <div className="grid md:grid-cols-4 gap-8 justify-items-center">
+                                {teamData["Board"].filter(m => m.role === "Board Member").map((member, index) => (
+                                    <motion.div
+                                        key={member.name}
+                                        initial={{ opacity: 0, y: 20 }}
+                                        animate={{ opacity: 1, y: 0 }}
+                                        transition={{ delay: 0.3 + index * 0.1 }}
+                                        className="group w-full"
+                                    >
+                                        <div className="aspect-square overflow-hidden rounded-xl mb-6 bg-esf-midnight border border-white/10 relative">
+                                            <div className="absolute inset-0 bg-esf-accent/20 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
+                                            <img
+                                                src={member.image}
+                                                alt={member.name}
+                                                className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 grayscale group-hover:grayscale-0"
+                                            />
+                                        </div>
+                                        <div className="text-center">
+                                            <h3 className="text-xl font-heading font-bold text-white mb-1 group-hover:text-esf-accent transition-colors">
+                                                {member.name}
+                                            </h3>
+                                            <p className="text-gray-500">{member.role}</p>
+                                        </div>
+                                    </motion.div>
+                                ))}
+                            </div>
+                        </div>
+                    ) : (
+                        /* Other Departments Grid */
+                        <div className="grid md:grid-cols-4 gap-8">
+                            {teamData[activeTab].map((member, index) => (
+                                <motion.div
+                                    key={member.name}
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ delay: index * 0.1 }}
+                                    className="group"
+                                >
+                                    <div className="aspect-square overflow-hidden rounded-xl mb-6 bg-esf-midnight border border-white/10 relative">
+                                        <div className="absolute inset-0 bg-esf-accent/20 opacity-0 group-hover:opacity-100 transition-opacity z-10"></div>
+                                        <img
+                                            src={member.image}
+                                            alt={member.name}
+                                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 grayscale group-hover:grayscale-0"
+                                        />
+                                    </div>
+                                    <div className="text-center">
+                                        <h3 className="text-xl font-heading font-bold text-white mb-1 group-hover:text-esf-accent transition-colors">
+                                            {member.name}
+                                        </h3>
+                                        <p className="text-gray-500">{member.role}</p>
+                                    </div>
+                                </motion.div>
+                            ))}
+                        </div>
+                    )}
                 </div>
             </section>
 
