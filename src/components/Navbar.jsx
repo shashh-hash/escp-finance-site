@@ -52,11 +52,12 @@ const Navbar = ({ onMoneyRain, onToggleMatrix, onStockCrash, matrixMode }) => {
 
     return (
         <nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-esf-midnight/10' : 'bg-transparent'
+            className={`fixed top-4 left-0 right-0 z-50 transition-all duration-300 px-6 ${scrolled ? '' : ''
                 }`}
         >
-            <div className="max-w-7xl mx-auto px-6 py-6">
-                <div className="flex items-center justify-between">
+            <div className={`max-w-7xl mx-auto rounded-2xl transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-2xl shadow-float border border-esf-midnight/10' : 'bg-white/80 backdrop-blur-xl border border-esf-midnight/5'
+                }`}>
+                <div className="px-6 py-4 flex items-center justify-between">
                     {/* Logo */}
                     <Link
                         to="/"
@@ -118,8 +119,8 @@ const Navbar = ({ onMoneyRain, onToggleMatrix, onStockCrash, matrixMode }) => {
                                     key={link.name}
                                     to={link.path}
                                     className={`px-6 py-3 rounded-lg text-base font-medium transition-colors ${location.pathname === link.path
-                                            ? 'bg-esf-midnight/10 text-esf-midnight'
-                                            : 'text-esf-blue hover:bg-esf-midnight/5 hover:text-esf-midnight'
+                                        ? 'bg-esf-midnight/10 text-esf-midnight'
+                                        : 'text-esf-blue hover:bg-esf-midnight/5 hover:text-esf-midnight'
                                         }`}
                                 >
                                     {link.name}
