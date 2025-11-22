@@ -60,7 +60,7 @@ const Home = () => {
 
                             <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-bold leading-[1.1] tracking-tight mb-8">
                                 The Future of <br />
-                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-white to-esf-silver">Finance</span>
+                                <span className="text-transparent bg-clip-text bg-gradient-to-r from-esf-midnight to-esf-blue">Finance</span>
                             </h1>
 
                             <p className="text-lg md:text-xl text-esf-blue max-w-xl leading-relaxed mb-10">
@@ -94,7 +94,7 @@ const Home = () => {
                         </div>
 
                         {/* Article Card */}
-                        <div className="flex-1 bg-gradient-to-br from-esf-blue to-esf-navy rounded-lg p-8 border border-esf-midnight/10 flex flex-col justify-center relative overflow-hidden group">
+                        <div className="flex-1 bg-gradient-to-br from-esf-accent/10 to-esf-blue/10 rounded-lg p-8 border border-esf-midnight/10 flex flex-col justify-center relative overflow-hidden group">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-esf-accent/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"></div>
 
                             <div className="relative z-10">
@@ -162,7 +162,7 @@ const Home = () => {
 
             {/* CTA Section */}
             <section className="py-32 px-4 text-center relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-b from-esf-midnight to-esf-navy pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-white to-slate-100 pointer-events-none"></div>
                 <div className="relative z-10 max-w-4xl mx-auto">
                     <h2 className="text-4xl md:text-6xl font-heading font-bold mb-8">
                         Ready to Launch Your Career?

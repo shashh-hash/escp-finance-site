@@ -71,7 +71,7 @@ const News = () => {
         <div className="min-h-screen bg-white text-esf-midnight">
             {/* Hero Section */}
             <section className="pt-32 pb-12 px-6 relative overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-b from-esf-navy/50 to-esf-midnight"></div>
+                <div className="absolute inset-0 bg-gradient-to-b from-slate-50 to-white"></div>
                 <div className="absolute inset-0 bg-grid opacity-10"></div>
                 <div className="max-w-7xl mx-auto relative z-10">
                     <motion.h1
