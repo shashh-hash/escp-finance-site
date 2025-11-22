@@ -51,28 +51,20 @@ const StockTicker = () => {
     };
 
     return (
-        <div className="fixed top-0 left-0 right-0 w-full bg-esf-midnight/95 overflow-hidden py-2 backdrop-blur-sm z-40">
-            <div className="flex whitespace-nowrap">
-                <motion.div
-                    animate={{ x: [0, -1000] }}
-                    transition={{
-                        repeat: Infinity,
-                        duration: 20,
-                        ease: "linear",
-                    }}
-                    className="flex gap-8 pr-8"
-                >
-                    {[...stocks, ...stocks, ...stocks].map((stock, index) => (
-                        <div key={index} className="flex items-center gap-2 text-sm font-medium">
-                            <span className="text-gray-400">{stock.symbol}</span>
-                            <span className="text-white">{formatPrice(stock.price, stock.symbol)}</span>
-                            <span className={`flex items-center ${stock.up ? 'text-green-400' : 'text-red-400'}`}>
-                                {stock.up ? <TrendingUp size={12} className="mr-1" /> : <TrendingDown size={12} className="mr-1" />}
-                                {stock.change > 0 ? '+' : ''}{stock.change.toFixed(2)}%
-                            </span>
-                        </div>
-                    ))}
-                </motion.div>
+        <div className="fixed top-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-b border-esf-midnight/10 overflow-hidden">
+            <div className="flex animate-marquee whitespace-nowrap py-2">
+                {[...stocks, ...stocks].map((stock, index) => (
+                    <div
+                        key={index}
+                        className="inline-flex items-center gap-2 px-6 border-r border-esf-midnight/10 last:border-r-0"
+                    >
+                        <span className="text-esf-midnight font-bold text-sm">{stock.symbol}</span>
+                        <span className="text-esf-blue text-xs">${stock.price.toFixed(2)}</span>
+                        <span className={`text-xs font-medium ${stock.change >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                            {stock.change >= 0 ? '+' : ''}{stock.change.toFixed(2)}%
+                        </span>
+                    </div>
+                ))}
             </div>
         </div>
     );

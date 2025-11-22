@@ -68,11 +68,11 @@ const Home = () => {
                             </p>
 
                             <div className="flex flex-wrap gap-4">
-                                <Link to="/join" className="px-8 py-4 bg-esf-accent text-esf-midnight font-heading font-bold rounded-full hover:bg-white transition-all duration-300 shadow-lg shadow-esf-accent/20 flex items-center gap-2 group">
+                                <Link to="/join" className="px-8 py-4 bg-esf-accent text-esf-midnight font-heading font-bold rounded-lg hover:bg-white transition-all duration-300 shadow-lg shadow-esf-accent/20 flex items-center gap-2 group">
                                     Join the Society
                                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                 </Link>
-                                <Link to="/about" className="px-8 py-4 border border-white/10 text-white font-medium rounded-full hover:bg-white/5 transition-colors duration-300 backdrop-blur-sm">
+                                <Link to="/about" className="px-8 py-4 border border-white/10 text-white font-medium rounded-lg hover:bg-white/5 transition-colors duration-300 backdrop-blur-sm">
                                     Learn More
                                 </Link>
                             </div>
@@ -82,7 +82,7 @@ const Home = () => {
                     {/* Side Grid - Professional Stats */}
                     <div className="lg:col-span-4 flex flex-col gap-6 mt-12 lg:mt-0">
                         {/* Stat Card */}
-                        <div className="flex-1 bg-esf-navy/50 backdrop-blur-md rounded-3xl p-8 border border-white/5 flex flex-col justify-center group hover:border-esf-accent/30 transition-colors">
+                        <div className="flex-1 bg-esf-navy/50 backdrop-blur-md rounded-lg p-8 border border-white/5 flex flex-col justify-center group hover:border-esf-accent/30 transition-colors">
                             <div className="flex justify-between items-start mb-4">
                                 <div className="p-3 rounded-xl bg-esf-blue/30 text-esf-accent">
                                     <Users className="w-6 h-6" />
@@ -94,7 +94,7 @@ const Home = () => {
                         </div>
 
                         {/* Article Card */}
-                        <div className="flex-1 bg-gradient-to-br from-esf-blue to-esf-navy rounded-3xl p-8 border border-white/5 flex flex-col justify-center relative overflow-hidden group">
+                        <div className="flex-1 bg-gradient-to-br from-esf-blue to-esf-navy rounded-lg p-8 border border-white/5 flex flex-col justify-center relative overflow-hidden group">
                             <div className="absolute top-0 right-0 w-32 h-32 bg-esf-accent/10 rounded-full blur-2xl -translate-y-1/2 translate-x-1/2"></div>
 
                             <div className="relative z-10">
@@ -138,10 +138,10 @@ const Home = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     {features.map((feature, index) => (
-                        <div key={index} className="bg-esf-navy/40 backdrop-blur-sm rounded-3xl p-10 border border-white/5 hover:border-esf-accent/30 hover:bg-esf-navy/60 transition-all duration-300 group h-[400px] flex flex-col justify-between">
+                        <div key={index} className="bg-esf-navy/40 backdrop-blur-sm rounded-lg p-10 border border-white/5 hover:border-esf-accent/30 hover:bg-esf-navy/60 transition-all duration-300 group h-[400px] flex flex-col justify-between">
 
                             <div>
-                                <div className="w-14 h-14 bg-esf-blue/30 rounded-2xl flex items-center justify-center mb-8 text-esf-accent group-hover:scale-110 transition-transform duration-300">
+                                <div className="w-14 h-14 bg-esf-blue/30 rounded-lg flex items-center justify-center mb-8 text-esf-accent group-hover:scale-110 transition-transform duration-300">
                                     {feature.icon}
                                 </div>
                                 <h3 className="text-2xl font-heading font-bold mb-4">{feature.title}</h3>
@@ -170,7 +170,7 @@ const Home = () => {
                     <p className="text-xl text-esf-silver mb-12 max-w-2xl mx-auto">
                         Join a community of ambitious students and gain access to exclusive events, workshops, and networking opportunities.
                     </p>
-                    <Link to="/join" className="inline-block px-12 py-5 bg-white text-esf-midnight font-heading font-bold text-lg rounded-full hover:bg-esf-accent transition-all duration-300 shadow-xl shadow-white/10">
+                    <Link to="/join" className="inline-block px-12 py-5 bg-white text-esf-midnight font-heading font-bold text-lg rounded-lg hover:bg-esf-accent transition-all duration-300 shadow-xl shadow-white/10">
                         Become a Member
                     </Link>
                 </div>

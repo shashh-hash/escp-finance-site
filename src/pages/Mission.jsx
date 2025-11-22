@@ -70,7 +70,7 @@ const Mission = () => {
                                 whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
                                 transition={{ delay: index * 0.1 }}
-                                className="glass glass-hover p-8 rounded-2xl group"
+                                className="glass glass-hover p-8 rounded-lg group"
                             >
                                 <div className="text-esf-accent mb-6 p-3 bg-esf-accent/10 rounded-lg inline-block group-hover:bg-esf-accent/20 transition-colors">
                                     {value.icon}
@@ -104,7 +104,7 @@ const Mission = () => {
                                 transition={{ delay: index * 0.1 }}
                                 className="flex items-start gap-6 p-6 rounded-xl hover:bg-white/5 transition-colors border border-transparent hover:border-white/5"
                             >
-                                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-esf-accent/10 text-esf-accent flex items-center justify-center font-bold border border-esf-accent/20">
+                                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-esf-accent/10 text-esf-accent flex items-center justify-center font-bold border border-esf-accent/20">
                                     {index + 1}
                                 </div>
                                 <p className="text-lg text-gray-300 leading-relaxed pt-1">{goal}</p>

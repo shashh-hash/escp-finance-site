@@ -51,49 +51,55 @@ const Navbar = ({ onMoneyRain, onToggleMatrix, onStockCrash, matrixMode }) => {
     ];
 
     return (
-        <nav className={`fixed top-10 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-esf-midnight/90 backdrop-blur-md border-b border-white/5' : 'bg-transparent'}`}>
-            <div className="max-w-[1400px] mx-auto px-6 py-1 flex justify-between items-center">
-                {/* Logo */}
-                <Link
-                    to="/"
-                    onClick={handleLogoClick}
-                    onDoubleClick={handleLogoDoubleClick}
-                    className="flex items-center gap-3 group"
-                >
-                    <img src={`${import.meta.env.BASE_URL}esf-logo.png`} alt="ESCP Students for Finance" className="h-12 w-auto object-contain" />
-                    <span className="font-heading font-bold text-xl text-white tracking-wide hidden sm:block">ESCP Students for Finance</span>
-                </Link>
-
-                {/* Desktop Menu */}
-                <div className="hidden lg:flex items-center gap-1">
-                    {links.map((link) => (
-                        <Link
-                            key={link.name}
-                            to={link.path}
-                            className={`px-6 py-3 rounded-full font-sans text-base font-medium transition-all ${location.pathname === link.path
-                                ? 'bg-white/10 text-white border border-white/10'
-                                : 'text-esf-silver hover:text-white hover:bg-white/5'
-                                }`}
-                        >
-                            {link.name}
-                        </Link>
-                    ))}
+        <nav
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg border-b border-esf-midnight/10' : 'bg-transparent'
+                }`}
+        >
+            <div className="max-w-7xl mx-auto px-6 py-6">
+                <div className="flex items-center justify-between">
+                    {/* Logo */}
                     <Link
-                        to="/join"
-                        className="ml-4 px-8 py-3 bg-esf-accent text-esf-midnight font-heading font-bold text-base rounded-full hover:bg-white transition-all shadow-lg hover:shadow-esf-accent/20"
+                        to="/"
+                        className="flex items-center gap-3 group"
+                        onClick={handleLogoClick}
+                        onDoubleClick={handleLogoDoubleClick}
                     >
-                        Join Now
+                        <img src={logoImg} alt="ESCP Finance Logo" className="h-12 w-auto" />
+                        <div className="flex flex-col">
+                            <span className="text-esf-midnight font-heading font-bold text-xl tracking-tight group-hover:text-esf-accent transition-colors">
+                                ESCP Finance
+                            </span>
+                            <span className="text-esf-blue text-xs font-medium tracking-wider">STUDENTS FOR FINANCE</span>
+                        </div>
                     </Link>
-                </div>
 
-                {/* Mobile Menu Button */}
-                <button
-                    className="lg:hidden text-white"
-                    onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                    aria-label="Toggle menu"
-                >
-                    {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-                </button>
+                    {/* Desktop Navigation */}
+                    <div className="hidden lg:flex items-center gap-2">
+                        {links.map((link) => (
+                            <Link
+                                key={link.name}
+                                to={link.path}
+                                className={`px-6 py-3 rounded-lg font-sans text-base font-medium transition-all ${location.pathname === link.path
+                                    ? 'bg-esf-midnight/10 text-esf-midnight border border-esf-midnight/20'
+                                    : 'text-esf-blue hover:text-esf-midnight hover:bg-esf-midnight/5'
+                                    }`}
+                            >
+                                {link.name}
+                            </Link>
+                        ))}
+                        <Link
+                            to="/join"
+                            className="ml-4 px-8 py-3 bg-esf-accent text-white font-heading font-bold text-base rounded-lg hover:bg-esf-blue transition-all shadow-lg hover:shadow-esf-accent/20"
+                        >
+                            Join Now
+                        </Link>
+                    </div>
+
+                    {/* Mobile Menu Button */}
+                    <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="lg:hidden text-esf-midnight p-2" aria-label="Toggle menu">
+                        {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                    </button>
+                </div>
             </div>
 
             {/* Mobile Menu */}
@@ -104,16 +110,16 @@ const Navbar = ({ onMoneyRain, onToggleMatrix, onStockCrash, matrixMode }) => {
                         animate={{ opacity: 1, height: 'auto' }}
                         exit={{ opacity: 0, height: 0 }}
                         transition={{ duration: 0.3 }}
-                        className="lg:hidden bg-esf-midnight border-t border-white/10 overflow-hidden"
+                        className="lg:hidden bg-white/95 backdrop-blur-md border-t border-esf-midnight/10 mt-4 pt-4"
                     >
-                        <div className="px-6 py-4 space-y-2">
+                        <div className="flex flex-col gap-2">
                             {links.map((link) => (
                                 <Link
                                     key={link.name}
                                     to={link.path}
-                                    className={`block text-sm font-sans font-medium py-3 border-b border-white/5 ${location.pathname === link.path
-                                        ? 'text-esf-accent'
-                                        : 'text-esf-silver hover:text-white'
+                                    className={`px-6 py-3 rounded-lg text-base font-medium transition-colors ${location.pathname === link.path
+                                            ? 'bg-esf-midnight/10 text-esf-midnight'
+                                            : 'text-esf-blue hover:bg-esf-midnight/5 hover:text-esf-midnight'
                                         }`}
                                 >
                                     {link.name}
@@ -121,7 +127,7 @@ const Navbar = ({ onMoneyRain, onToggleMatrix, onStockCrash, matrixMode }) => {
                             ))}
                             <Link
                                 to="/join"
-                                className="block w-full text-center px-6 py-4 bg-esf-accent text-esf-midnight font-heading font-bold text-sm rounded-full hover:bg-white transition-colors mt-6"
+                                className="block w-full text-center px-6 py-4 bg-esf-accent text-white font-heading font-bold text-sm rounded-lg hover:bg-esf-blue transition-colors mt-6"
                             >
                                 Join Now
                             </Link>

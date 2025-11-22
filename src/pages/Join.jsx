@@ -96,7 +96,7 @@ const Join = () => {
                         </p>
                     </div>
 
-                    <div className="glass p-8 md:p-12 rounded-2xl border border-white/10">
+                    <div className="glass p-8 md:p-12 rounded-lg border border-white/10">
                         <form className="space-y-6">
                             <div className="grid md:grid-cols-2 gap-6">
                                 <div>

@@ -8,21 +8,21 @@
   }
 
   body {
-    @apply bg-esf-midnight text-white font-sans antialiased selection:bg-esf-accent selection:text-esf-midnight;
+    @apply bg-white text-esf-midnight font-sans antialiased selection:bg-esf-accent selection:text-white;
   }
 }
 
 @layer utilities {
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-white to-esf-silver;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-esf-midnight to-esf-blue;
   }
 
   .glass {
-    @apply bg-esf-navy/50 backdrop-blur-md border border-white/5;
+    @apply bg-slate-50/80 backdrop-blur-md border border-esf-midnight/10;
   }
 
   .glass-hover {
-    @apply hover:bg-esf-navy/70 hover:border-esf-accent/30 transition-all duration-300;
+    @apply hover:bg-slate-100 hover:border-esf-accent/30 transition-all duration-300;
   }
 
   .card-shadow {
@@ -36,16 +36,16 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #0B0C15;
+  background: #FFFFFF;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #303151;
+  background: #CBD5E1;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #4A4B75;
+  background: #94A3B8;
 }
 
 /* Matrix Mode */

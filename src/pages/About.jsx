@@ -134,7 +134,7 @@ const About = () => {
                     <h2 className="text-4xl font-heading font-bold mb-12 text-center">
                         Who We Are
                     </h2>
-                    <div className="space-y-8 text-lg text-gray-400 leading-relaxed glass p-8 md:p-12 rounded-2xl">
+                    <div className="space-y-8 text-lg text-gray-400 leading-relaxed glass p-8 md:p-12 rounded-lg">
                         <p>
                             Founded in 2025, ESCP Students for Finance is the newest finance society at ESCP Business School's
                             Turin campus. We are building a community of students passionate about finance, starting from the ground up.
@@ -167,7 +167,7 @@ const About = () => {
                             <button
                                 key={tab}
                                 onClick={() => setActiveTab(tab)}
-                                className={`px-6 py-3 rounded-full text-sm font-bold uppercase tracking-wider transition-all duration-300 ${activeTab === tab
+                                className={`px-6 py-3 rounded-lg text-sm font-bold uppercase tracking-wider transition-all duration-300 ${activeTab === tab
                                     ? 'bg-esf-accent text-esf-midnight shadow-lg shadow-esf-accent/20 scale-105'
                                     : 'bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white'
                                     }`}

@@ -32,7 +32,7 @@ const Contact = () => {
                 <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
                     {/* Contact Info */}
                     <div className="space-y-6">
-                        <div className="glass p-8 rounded-2xl">
+                        <div className="glass p-8 rounded-lg">
                             <Mail className="text-esf-accent mb-4" size={32} />
                             <h3 className="text-2xl font-heading font-bold text-white mb-2">
                                 Email Us
@@ -48,7 +48,7 @@ const Contact = () => {
                             </a>
                         </div>
 
-                        <div className="glass p-8 rounded-2xl">
+                        <div className="glass p-8 rounded-lg">
                             <MapPin className="text-esf-accent mb-4" size={32} />
                             <h3 className="text-2xl font-heading font-bold text-white mb-2">
                                 Visit Us
@@ -62,26 +62,26 @@ const Contact = () => {
                             </p>
                         </div>
 
-                        <div className="glass p-8 rounded-2xl">
+                        <div className="glass p-8 rounded-lg">
                             <h3 className="text-2xl font-heading font-bold text-white mb-4">
                                 Follow Us
                             </h3>
                             <div className="flex gap-4">
                                 <a
                                     href="#"
-                                    className="w-12 h-12 bg-white/5 border border-white/10 text-white rounded-full flex items-center justify-center hover:bg-esf-accent hover:text-esf-midnight transition-all"
+                                    className="w-12 h-12 bg-white/5 border border-white/10 text-white rounded-lg flex items-center justify-center hover:bg-esf-accent hover:text-esf-midnight transition-all"
                                 >
                                     <Linkedin size={20} />
                                 </a>
                                 <a
                                     href="#"
-                                    className="w-12 h-12 bg-white/5 border border-white/10 text-white rounded-full flex items-center justify-center hover:bg-esf-accent hover:text-esf-midnight transition-all"
+                                    className="w-12 h-12 bg-white/5 border border-white/10 text-white rounded-lg flex items-center justify-center hover:bg-esf-accent hover:text-esf-midnight transition-all"
                                 >
                                     <Instagram size={20} />
                                 </a>
                                 <a
                                     href="#"
-                                    className="w-12 h-12 bg-white/5 border border-white/10 text-white rounded-full flex items-center justify-center hover:bg-esf-accent hover:text-esf-midnight transition-all"
+                                    className="w-12 h-12 bg-white/5 border border-white/10 text-white rounded-lg flex items-center justify-center hover:bg-esf-accent hover:text-esf-midnight transition-all"
                                 >
                                     <Twitter size={20} />
                                 </a>
@@ -90,7 +90,7 @@ const Contact = () => {
                     </div>
 
                     {/* Contact Form */}
-                    <div className="glass p-8 md:p-10 rounded-2xl">
+                    <div className="glass p-8 md:p-10 rounded-lg">
                         <h2 className="text-3xl font-heading font-bold text-white mb-8">
                             Send us a Message
                         </h2>

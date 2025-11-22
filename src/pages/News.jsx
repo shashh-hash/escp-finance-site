@@ -102,7 +102,7 @@ const News = () => {
                             placeholder="Search news..."
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
-                            className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-full text-white placeholder-gray-500 focus:outline-none focus:border-esf-accent/50 focus:bg-white/10 transition-all backdrop-blur-sm"
+                            className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-esf-accent/50 focus:bg-white/10 transition-all backdrop-blur-sm"
                         />
                         <div className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
