@@ -52,12 +52,12 @@ const Navbar = ({ onMoneyRain, onToggleMatrix, onStockCrash, matrixMode }) => {
 
     return (
         <nav
-            className={`fixed top-4 left-0 right-0 z-50 transition-all duration-300 px-6 ${scrolled ? '' : ''
+            className={`fixed top-10 left-0 right-0 z-50 transition-all duration-300 px-4 ${scrolled ? '' : ''
                 }`}
         >
-            <div className={`max-w-7xl mx-auto rounded-2xl transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-2xl shadow-float border border-esf-midnight/10' : 'bg-white/80 backdrop-blur-xl border border-esf-midnight/5'
+            <div className={`max-w-7xl mx-auto rounded-xl transition-all duration-300 ${scrolled ? 'bg-white/95 backdrop-blur-2xl shadow-float border border-esf-midnight/10' : 'bg-white/80 backdrop-blur-xl border border-esf-midnight/5'
                 }`}>
-                <div className="px-6 py-4 flex items-center justify-between">
+                <div className="px-8 py-2.5 flex items-center justify-between">
                     {/* Logo */}
                     <Link
                         to="/"
@@ -65,12 +65,12 @@ const Navbar = ({ onMoneyRain, onToggleMatrix, onStockCrash, matrixMode }) => {
                         onClick={handleLogoClick}
                         onDoubleClick={handleLogoDoubleClick}
                     >
-                        <img src={logoImg} alt="ESCP Finance Logo" className="h-12 w-auto" />
+                        <img src={logoImg} alt="ESCP Finance Logo" className="h-10 w-auto" />
                         <div className="flex flex-col">
-                            <span className="text-esf-midnight font-heading font-bold text-xl tracking-tight group-hover:text-esf-accent transition-colors">
+                            <span className="text-esf-midnight font-heading font-bold text-lg tracking-tight group-hover:text-esf-accent transition-colors">
                                 ESCP Finance
                             </span>
-                            <span className="text-esf-blue text-xs font-medium tracking-wider">STUDENTS FOR FINANCE</span>
+                            <span className="text-esf-blue text-[10px] font-medium tracking-wider">STUDENTS FOR FINANCE</span>
                         </div>
                     </Link>
 
@@ -80,7 +80,7 @@ const Navbar = ({ onMoneyRain, onToggleMatrix, onStockCrash, matrixMode }) => {
                             <Link
                                 key={link.name}
                                 to={link.path}
-                                className={`px-6 py-3 rounded-lg font-sans text-base font-medium transition-all ${location.pathname === link.path
+                                className={`px-4 py-2 rounded-lg font-sans text-sm font-medium transition-all ${location.pathname === link.path
                                     ? 'bg-esf-midnight/10 text-esf-midnight border border-esf-midnight/20'
                                     : 'text-esf-blue hover:text-esf-midnight hover:bg-esf-midnight/5'
                                     }`}
@@ -90,7 +90,7 @@ const Navbar = ({ onMoneyRain, onToggleMatrix, onStockCrash, matrixMode }) => {
                         ))}
                         <Link
                             to="/join"
-                            className="ml-4 px-8 py-3 bg-esf-accent text-white font-heading font-bold text-base rounded-lg hover:bg-esf-blue transition-all shadow-lg hover:shadow-esf-accent/20"
+                            className="ml-4 px-6 py-2 bg-esf-accent text-white font-heading font-bold text-sm rounded-lg hover:bg-esf-blue transition-all shadow-lg hover:shadow-esf-accent/20"
                         >
                             Join Now
                         </Link>

@@ -22,7 +22,11 @@
   }
 
   .glass-hover {
-    @apply hover:bg-white hover:border-esf-accent/30 hover:shadow-[0_20px_60px_-15px_rgba(0, 217, 255, 0.3)] transition-all duration-500;
+    @apply hover:bg-white hover:border-esf-accent/30 transition-all duration-500;
+  }
+
+  .glass-hover:hover {
+    box-shadow: 0 20px 60px -15px rgba(0, 217, 255, 0.3);
   }
 
   /* Modern Shadow System */
@@ -68,6 +72,46 @@
   .bento-item-lg {
     @apply col-span-2 row-span-2;
   }
+
+  /* Gradient Mesh Animation */
+  @keyframes mesh-float {
+
+    0%,
+    100% {
+      transform: translate(0, 0) scale(1);
+    }
+
+    33% {
+      transform: translate(30px, -30px) scale(1.1);
+    }
+
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+  }
+
+  @keyframes gridMove {
+    0% {
+      transform: translateY(0);
+    }
+
+    100% {
+      transform: translateY(80px);
+    }
+  }
+
+  .mesh-animate {
+    animation: mesh-float 20s ease-in-out infinite;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 /* Custom Scrollbar */
@@ -100,27 +144,6 @@
 
 .matrix-mode * {
   border-color: #0f0 !important;
-}
-
-/* Gradient Mesh Animation */
-@keyframes mesh-float {
-
-  0%,
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
-
-  33% {
-    transform: translate(30px, -30px) scale(1.1);
-  }
-
-  66% {
-    transform: translate(-20px, 20px) scale(0.9);
-  }
-}
-
-.mesh-animate {
-  animation: mesh-float 20s ease-in-out infinite;
 }
 
 /* Stonks Mode */

@@ -34,12 +34,33 @@ const Home = () => {
     return (
         <div className="min-h-screen bg-white text-esf-midnight font-sans">
 
-            {/* Hero Section - Minimal & Bold */}
-            <section className="relative min-h-screen flex items-center justify-center px-6 pt-32 pb-20 overflow-hidden gradient-mesh">
-                {/* Animated Gradient Mesh */}
-                <div className="absolute inset-0 gradient-mesh-accent opacity-60 mesh-animate pointer-events-none"></div>
+            {/* Hero Section - Minimal & Bold with Animated Background */}
+            <section className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-40 pb-20 overflow-hidden bg-gradient-to-br from-slate-50 to-white">
+                {/* Animated Grid Background */}
+                <div className="absolute inset-0 overflow-hidden">
+                    {/* Stronger gradient base */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-esf-blue/10 via-white to-esf-accent/10"></div>
 
-                <div className="relative z-10 max-w-6xl mx-auto text-center">
+                    {/* Animated grid */}
+                    <div className="absolute inset-0" style={{
+                        backgroundImage: `
+                            linear-gradient(to right, rgba(0, 217, 255, 0.15) 1px, transparent 1px),
+                            linear-gradient(to bottom, rgba(0, 217, 255, 0.15) 1px, transparent 1px)
+                        `,
+                        backgroundSize: '60px 60px',
+                        animation: 'gridMove 15s linear infinite'
+                    }}></div>
+
+                    {/* Large floating orbs - much more visible */}
+                    <div className="absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-esf-accent/20 rounded-full blur-3xl animate-pulse"></div>
+                    <div className="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-esf-blue/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s', animationDuration: '3s' }}></div>
+                    <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-esf-accent/15 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s', animationDuration: '4s' }}></div>
+                </div>
+
+                {/* Animated Gradient Mesh */}
+                <div className="absolute inset-0 gradient-mesh-accent opacity-40 mesh-animate pointer-events-none"></div>
+
+                <div className="relative z-10 max-w-6xl mx-auto text-center mb-20">
                     <motion.div
                         initial={{ opacity: 0, y: 30 }}
                         animate={{ opacity: 1, y: 0 }}
@@ -63,7 +84,7 @@ const Home = () => {
                         </p>
 
                         {/* CTA Buttons */}
-                        <div className="flex flex-wrap gap-4 justify-center">
+                        <div className="flex flex-wrap gap-4 justify-center mb-20">
                             <Link to="/join" className="group px-10 py-5 bg-esf-midnight text-white font-heading font-bold text-lg rounded-xl hover:bg-esf-accent hover:text-esf-midnight transition-all duration-300 shadow-float hover:shadow-float-xl hover:-translate-y-1 flex items-center gap-3">
                                 Join the Society
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
@@ -73,6 +94,85 @@ const Home = () => {
                             </Link>
                         </div>
                     </motion.div>
+                </div>
+
+                {/* Horizontal Scrolling Showcase - Nothing.tech inspired - Inside Hero */}
+                <div className="relative z-10 w-full">
+                    <div className="flex gap-6 px-6 overflow-x-auto scrollbar-hide pb-8 snap-x snap-mandatory">
+                        {/* Showcase Items */}
+                        <motion.div
+                            className="min-w-[320px] md:min-w-[380px] snap-center flex-shrink-0"
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.3 }}
+                        >
+                            <div className="bg-white/80 backdrop-blur-md border border-esf-midnight/10 rounded-2xl p-8 h-[280px] flex flex-col items-center justify-center text-center group hover:bg-white hover:shadow-float-lg transition-all duration-500">
+                                <div className="w-16 h-16 mb-4">
+                                    <TrendingUp className="w-full h-full text-esf-accent group-hover:scale-110 transition-transform duration-500" strokeWidth={1.5} />
+                                </div>
+                                <h3 className="text-2xl font-heading font-bold text-esf-midnight mb-2">Market Analysis</h3>
+                                <p className="text-slate-600 text-sm leading-relaxed">
+                                    Deep insights into global markets
+                                </p>
+                            </div>
+                        </motion.div>
+
+                        <motion.div
+                            className="min-w-[320px] md:min-w-[380px] snap-center flex-shrink-0"
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.4 }}
+                        >
+                            <div className="bg-white/80 backdrop-blur-md border border-esf-midnight/10 rounded-2xl p-8 h-[280px] flex flex-col items-center justify-center text-center group hover:bg-white hover:shadow-float-lg transition-all duration-500">
+                                <div className="w-16 h-16 mb-4">
+                                    <Target className="w-full h-full text-esf-accent group-hover:scale-110 transition-transform duration-500" strokeWidth={1.5} />
+                                </div>
+                                <h3 className="text-2xl font-heading font-bold text-esf-midnight mb-2">Trading Workshops</h3>
+                                <p className="text-slate-600 text-sm leading-relaxed">
+                                    Hands-on strategies and execution
+                                </p>
+                            </div>
+                        </motion.div>
+
+                        <motion.div
+                            className="min-w-[320px] md:min-w-[380px] snap-center flex-shrink-0"
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.5 }}
+                        >
+                            <div className="bg-white/80 backdrop-blur-md border border-esf-midnight/10 rounded-2xl p-8 h-[280px] flex flex-col items-center justify-center text-center group hover:bg-white hover:shadow-float-lg transition-all duration-500">
+                                <div className="w-16 h-16 mb-4">
+                                    <Users className="w-full h-full text-esf-accent group-hover:scale-110 transition-transform duration-500" strokeWidth={1.5} />
+                                </div>
+                                <h3 className="text-2xl font-heading font-bold text-esf-midnight mb-2">Networking Events</h3>
+                                <p className="text-slate-600 text-sm leading-relaxed">
+                                    Connect with industry leaders
+                                </p>
+                            </div>
+                        </motion.div>
+
+                        <motion.div
+                            className="min-w-[320px] md:min-w-[380px] snap-center flex-shrink-0"
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 0.6 }}
+                        >
+                            <div className="bg-white/80 backdrop-blur-md border border-esf-midnight/10 rounded-2xl p-8 h-[280px] flex flex-col items-center justify-center text-center group hover:bg-white hover:shadow-float-lg transition-all duration-500">
+                                <div className="w-16 h-16 mb-4">
+                                    <Briefcase className="w-full h-full text-esf-accent group-hover:scale-110 transition-transform duration-500" strokeWidth={1.5} />
+                                </div>
+                                <h3 className="text-2xl font-heading font-bold text-esf-midnight mb-2">Career Support</h3>
+                                <p className="text-slate-600 text-sm leading-relaxed">
+                                    Internships and opportunities
+                                </p>
+                            </div>
+                        </motion.div>
+                    </div>
+
+                    {/* Scroll Indicator */}
+                    <div className="text-center mt-4">
+                        <p className="text-slate-400 text-xs uppercase tracking-wider">Scroll to explore →</p>
+                    </div>
                 </div>
             </section>
 
